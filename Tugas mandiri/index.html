@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio & Konsultasi Web | [Nama Mahasiswa]</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header dan Navigasi Semantik -->
+  <header class="navbar">
+    <div class="brand">DevShowcase</div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#projects">Portofolio</a></li>
+        <li><a href="#services">Layanan</a></li>
+        <li><a href="#skills">Keahlian</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Pembungkus Tata Letak Responsif -->
+  <div class="layout-wrapper">
+    
+    <!-- Konten Utama (Main) -->
+    <main>
+      
+      <!-- Section 1: Tentang Saya -->
+      <section id="about" class="content-card">
+        <h2>Tentang Saya</h2>
+        <p>
+          Saya adalah mahasiswa Sistem Informasi Institut Teknologi Del yang berfokus pada rekayasa antarmuka web modern, kode bersih, dan pemenuhan standar aksesibilitas WCAG.
+        </p>
+        
+        <h3>Alur Pengembangan Antarmuka (Ordered List):</h3>
+        <ol class="workflow-list">
+          <li>Analisis kebutuhan fungsional dan semantik konten</li>
+          <li>Pembuatan antarmuka visual berbasis CSS Box Model</li>
+          <li>Optimasi aksesibilitas, responsivitas, dan SEO</li>
+        </ol>
+      </section>
+
+      <!-- Section 2: Rekapitulasi Proyek (Tabel Semantik Lengkap) -->
+      <section id="projects" class="content-card">
+        <h2>Portofolio & Riwayat Proyek</h2>
+        <div class="table-container">
+          <table class="styled-table">
+            <caption>Rekapitulasi Proyek Pengembangan Web Akademik</caption>
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama Proyek</th>
+                <th scope="col">Cakupan Teknologi</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Sistem Kartu Profil Interaktif</td>
+                <td>HTML5 Semantik, CSS3 Flexbox</td>
+                <td>Selesai</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Formulir Reservasi Layanan Konsultasi</td>
+                <td>Accessible Forms, Native Validation</td>
+                <td>Aktif</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3">Total Proyek Terdata</td>
+                <td>2 Komponen</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Formulir Interaktif & Accessible (6+ Kontrol Input & 2 Fieldset) -->
+      <section id="services" class="content-card">
+        <h2>Pemesanan Layanan & Konsultasi Web</h2>
+        <form class="custom-form" action="#" method="POST">
+          
+          <!-- Fieldset 1: Data Pemesan -->
+          <fieldset class="form-fieldset">
+            <legend>Data Identitas Diri</legend>
+            
+            <div class="form-group">
+              <label for="fullName">Nama Lengkap <span class="req">*</span></label>
+              <input type="text" id="fullName" name="fullName" class="form-input" required placeholder="Contoh: Budi Siregar">
+            </div>
+
+            <div class="form-group">
+              <label for="userEmail">Email Resmi (@del.ac.id) <span class="req">*</span></label>
+              <input type="email" id="userEmail" name="userEmail" class="form-input" required placeholder="nama@del.ac.id">
+            </div>
+
+            <div class="form-group">
+              <label for="userPhone">Nomor WhatsApp/Telepon <span class="req">*</span></label>
+              <input type="tel" id="userPhone" name="userPhone" class="form-input" required placeholder="08123456789">
+            </div>
+          </fieldset>
+
+          <!-- Fieldset 2: Spesifikasi Layanan -->
+          <fieldset class="form-fieldset">
+            <legend>Detail Permintaan Layanan</legend>
+
+            <div class="form-group">
+              <label for="projectCount">Estimasi Jumlah Halaman</label>
+              <input type="number" id="projectCount" name="projectCount" class="form-input" min="1" max="15" placeholder="1">
+            </div>
+
+            <div class="form-group">
+              <label for="serviceCategory">Pilihan Kategori Layanan</label>
+              <select id="serviceCategory" name="serviceCategory" class="form-input">
+                <option value="uiux">Desain UI/UX & Wireframing</option>
+                <option value="frontend">Pengembangan Frontend Semantik</option>
+                <option value="audit">Audit Aksesibilitas Web (WCAG)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <span class="group-label">Skala Prioritas:</span>
+              <div class="options-inline">
+                <label><input type="radio" name="priority" value="regular" checked> Reguler</label>
+                <label><input type="radio" name="priority" value="express"> Kilat (Urgent)</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="group-label">Fitur Tambahan:</span>
+              <div class="options-inline">
+                <label><input type="checkbox" name="responsive" value="yes" checked> Tampilan Responsif Mobile</label>
+                <label><input type="checkbox" name="seo" value="yes"> Optimasi SEO Dasar</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="projectNotes">Deskripsi Kebutuhan Proyek <span class="req">*</span></label>
+              <textarea id="projectNotes" name="projectNotes" rows="4" class="form-input" required placeholder="Tuliskan gambaran proyek Anda di sini..."></textarea>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn-submit">Kirim Permintaan Layanan</button>
+        </form>
+      </section>
+
+    </main>
+
+    <!-- Konten Pelengkap Semantik (Aside) -->
+    <aside id="skills" class="sidebar">
+      <h3>Daftar Keahlian (Unordered List)</h3>
+      <ul class="skills-list">
+        <li>Arsitektur HTML5 Semantik</li>
+        <li>CSS3 Flexbox & CSS Grid</li>
+        <li>Standar WCAG 2.2 Aksesibilitas</li>
+        <li>Pengelolaan Repositori Git & GitHub</li>
+      </ul>
+      <div class="aside-badge">
+        <h4>Afiliasi</h4>
+        <p>Institut Teknologi Del, Laguboti</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Penutup Semantik (Footer) -->
+  <footer class="footer">
+    <p>&copy; 2026 [Nama Anda / NIM]. Seluruh hak cipta dilindungi.</p>
+  </footer>
+
+</body>
+</html>
