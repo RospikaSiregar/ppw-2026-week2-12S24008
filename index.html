@@ -4,577 +4,501 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rospika Sarah Yosefin Siregar | Portfolio Mahasiswa Sistem Informasi</title>
-
-  <!-- 1. Bootstrap 5.3.3 CSS via CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   
-  <!-- 2. Bootstrap Icons -->
+  <!-- Bootstrap 5.3.3 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
-  <!-- 3. Custom CSS Overrides (Wajib dimuat SETELAH Bootstrap) -->
-  <link rel="stylesheet" href="custom-style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100">
+<body>
 
-  <!-- HEADER & RESPONSIVE NAVBAR DENGAN TOGGLE COLLAPSE -->
-  <header>
-    <nav id="mainNavbar" class="navbar navbar-expand-lg sticky-top custom-navbar shadow-sm py-3">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-          <span class="brand-monogram">RS</span>
-          <div class="d-flex flex-column">
-            <span class="brand-name">Rospika Siregar</span>
-            <span class="brand-sub">S1 Sistem Informasi IT Del</span>
-          </div>
-        </a>
-        <!-- Tombol Hamburger Mobile -->
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Navigasi Menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <!-- ========================================================== -->
+  <!-- SECTION: HEADER & NAVIGASI UTAMA (Poin Modul: Responsif Navbar) -->
+  <!-- ========================================================== -->
+  <header class="navbar navbar-expand-lg navbar-light fixed-top navbar-wrapper">
+    <div class="container">
+      <!-- Identitas Merek / Monogram -->
+      <a href="#" class="brand-monogram text-decoration-none">
+        <span class="monogram-box">RS</span>
+        <div class="brand-text">
+          <span class="brand-name">Rospika Siregar</span>
+          <span class="brand-role">S1 Sistem Informasi</span>
+        </div>
+      </a>
+      
+      <!-- Tombol Hamburger untuk Tampilan Mobile -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav ms-auto gap-lg-3 my-2 my-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="#about">Tentang</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Portofolio</a></li>
+      <!-- Daftar Tautan Navigasi -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <nav class="nav-links-area" aria-label="Navigasi Utama">
+          <ul class="navbar-nav align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Portofolio Karya</a></li>
             <li class="nav-item"><a class="nav-link" href="#akademik">Riwayat Akademik</a></li>
             <li class="nav-item"><a class="nav-link" href="#services">Pesan Layanan</a></li>
           </ul>
-          <a href="#services" class="btn btn-brand-action ms-lg-3 rounded-pill px-3 py-2">Mulai Diskusi</a>
+        </nav>
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <a href="#services" class="cta-pill-nav text-decoration-none">Mulai Kolaborasi</a>
         </div>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <!-- Running Ticker Kreatif CSS -->
+  <!-- Running Ticker Kreatif -->
   <div class="ticker-strip" aria-hidden="true">
     <div class="ticker-track">
-      <span>&bull; BOOTSTRAP 5.3 INTEGRATION</span>
-      <span>&bull; GEMASTIK ICT BUSINESS</span>
+      <span>&bull; DIGITAL SOLUTION INNOVATION</span>
       <span>&bull; UI/UX PROTOTYPING & RESEARCH</span>
-      <span>&bull; ADVANCED CSS SELECTORS & VARIABLES</span>
-      <span>&bull; WCAG 2.2 LEVEL AA ACCESSIBLE</span>
-      <!-- Duplicate for seamless loop -->
-      <span>&bull; BOOTSTRAP 5.3 INTEGRATION</span>
-      <span>&bull; GEMASTIK ICT BUSINESS</span>
+      <span>&bull; BUSINESS PROCESS MODELING</span>
+      <span>&bull; ACCESSIBLE WEB WCAG 2.2</span>
+      <span>&bull; SISTEM INFORMASI IT DEL</span>
+      <span>&bull; DIGITAL SOLUTION INNOVATION</span>
       <span>&bull; UI/UX PROTOTYPING & RESEARCH</span>
-      <span>&bull; ADVANCED CSS SELECTORS & VARIABLES</span>
-      <span>&bull; WCAG 2.2 LEVEL AA ACCESSIBLE</span>
+      <span>&bull; BUSINESS PROCESS MODELING</span>
+      <span>&bull; ACCESSIBLE WEB WCAG 2.2</span>
+      <span>&bull; SISTEM INFORMASI IT DEL</span>
     </div>
   </div>
 
-  <!-- CONTAINER GRID UTAMA: 8 KOLOM KONTEN + 4 KOLOM ASIDE -->
-  <div class="container my-5">
-    <div class="row g-4">
-      
-      <main class="col-lg-8">
+  <!-- ========================================================== -->
+  <!-- PEMBUNGKUS UTAMA TATA LETAK GRID -->
+  <!-- ========================================================== -->
+  <div class="main-layout container my-5">
+    
+    <main class="w-100">
 
-        <!-- SECTION 1: HERO SECTION -->
-        <section id="about" class="p-4 p-md-5 mb-4 custom-panel rounded-4">
-          <div class="row align-items-center g-4">
-            <div class="col-md-7">
-              <span class="badge badge-subtle mb-3 px-3 py-2 rounded-pill">
-                <i class="bi bi-mortarboard-fill me-1"></i> S1 Sistem Informasi &bull; IT Del
-              </span>
-              <h1 class="hero-headline fw-bold">
-                Menjembatani <span class="shimmer-text">Strategi Bisnis</span> & Desain Antarmuka Human-Centered.
-              </h1>
-              <p class="text-secondary mt-3 hero-pitch">
-                Mahasiswa Sistem Informasi Institut Teknologi Del yang berfokus pada analisis proses bisnis digital, perancangan prototipe produk teruji, dan rekayasa antarmuka modern yang accessible dan terstruktur rapi.
+      <!-- ========================================================== -->
+      <!-- SECTION: HERO / TENTANG SAYA (Poin Modul: Ordered List & Bio) -->
+      <!-- ========================================================== -->
+      <section id="about" class="editorial-card hero-block mb-4">
+        <div class="hero-text-side">
+          <div class="role-badge">
+            <span class="badge-sparkle" aria-hidden="true"><i class="bi bi-stars"></i></span> Sistem Informasi &bull; Institut Teknologi Del
+          </div>
+          <h1 class="hero-headline">
+            Hi, I am <span class="shimmer-text">Rospika Sarah Yosefin Siregar</span> I'm undergraduate student of Information Systems at Institut Teknologi Del
+          </h1>
+          <p class="hero-pitch">
+            Mahasiswa Sistem Informasi di Institut Teknologi Del dengan fokus pada analisis kebutuhan bisnis digital, perancangan antarmuka prototipe teruji, dan rekayasa web terstruktur yang patuh pada standar aksesibilitas WCAG 2.2 Level AA.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary-action text-decoration-none">Lihat Portofolio Karya</a>
+            <a href="#services" class="btn-secondary-action text-decoration-none">Diskusi Proyek</a>
+          </div>
+
+          <!-- Metodologi Rekayasa (Ordered List Wajib Modul) -->
+          <div class="methodology-card">
+            <h2 class="sub-heading-method">Alur Kerja Rekayasa & Inovasi (Ordered List):</h2>
+            <ol class="workflow-steps">
+              <li>Riset Lapangan & Pemodelan Proses Bisnis (Market Sizing & Alur BPMN)</li>
+              <li>Perancangan Antarmuka Interaktif & Arsitektur Pengguna di Figma</li>
+              <li>Implementasi Kode Semantik Bersih dan Pengujian Aksesibilitas Terstandar</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="hero-visual-side">
+          <div class="portrait-container floating-portrait">
+            <img src="profil.JPG" alt="Foto Profil Rospika Sarah Yosefin Siregar" class="portrait-image">
+            <div class="status-floating-pill">
+              <span class="status-dot-pulse" aria-hidden="true"></span>
+              <span>Tersedia untuk Kolaborasi</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- SECTION: PORTOFOLIO KARYA (Poin Modul: Tombol & Bootstrap Modal + Gambar) -->
+      <!-- ========================================================== -->
+      <section id="projects" class="editorial-card interactive-hover mb-4">
+        <div class="section-intro">
+          <span class="section-kicker">Showcase Inovasi</span>
+          <h2 class="section-title">Portofolio Karya Unggulan</h2>
+          <p class="section-summary">Studi kasus riil yang memadukan model bisnis digital, kebutuhan masyarakat, dan solusi antarmuka interaktif.</p>
+        </div>
+
+        <!-- Grid 3 Kartu Portofolio -->
+        <div class="showcase-grid">
+          
+          <!-- Proyek 1: AndaliTrack -->
+          <article class="project-showcase-card">
+            <div class="card-image-wrap">
+              <img src="andalitrack.png" alt="Preview AndaliTrack" class="card-project-img">
+              <span class="card-badge-overlay">Digital Supply Chain</span>
+            </div>
+            <div class="card-content-body">
+              <span class="domain-tag">Agrotech & Supply Chain</span>
+              <h3 class="card-heading-title">AndaliTrack Marketplace & Traceability</h3>
+              <p class="card-description">
+                Solusi rantai pasok dan platform digital terintegrasi untuk komoditas rempah andaliman di kawasan Danau Toba.
               </p>
-              <div class="d-flex flex-wrap gap-2 my-4">
-                <a href="#projects" class="btn btn-brand-action rounded-3 px-4 py-2">Lihat Portofolio</a>
-                <a href="#services" class="btn btn-outline-brand rounded-3 px-4 py-2">Konsultasi Layanan</a>
+              <div class="tech-stack-row mb-3">
+                <span>ICT Business</span>
+                <span>Pitch Deck</span>
+                <span>Figma UI</span>
               </div>
-              <div class="p-3 bg-white rounded-3 border custom-border-light">
-                <h2 class="h6 fw-bold mb-2 text-dark">Alur Kerja Rekayasa (Ordered List):</h2>
-                <ol class="small text-secondary ps-3 mb-0">
-                  <li>Analisis Kebutuhan Bisnis & Pemodelan Proses (BPMN / BMC)</li>
-                  <li>Perancangan Antarmuka Berbasis Desain Sistem di Figma</li>
-                  <li>Pengembangan Web Semantik, Refactor Bootstrap 5, & Audit Aksesibilitas</li>
-                </ol>
+              <!-- Tombol Pemicu Modal Khusus dengan Atribut Data Lengkap -->
+              <button type="button" class="btn btn-outline-danger btn-sm rounded-pill w-100 fw-bold mt-auto" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#projectModal" 
+                      data-title="AndaliTrack Marketplace & Traceability" 
+                      data-category="Agrotech & Supply Chain (Digital Platform)" 
+                      data-img="andalitrack.png"
+                      data-desc="AndaliTrack adalah platform rantai pasok digital inovatif yang dikembangkan untuk mengatasi permasalahan distribusi rempah andaliman di kawasan Danau Toba. Sistem ini menghubungkan petani lokal secara langsung dengan pembeli skala industri, dilengkapi fitur pelacakan panen berbasis QR, serta kalkulasi estimasi harga pasar secara transparan.">
+                <i class="bi bi-eye-fill me-1"></i> Lihat Penjelasan & Detail Proyek
+              </button>
+            </div>
+          </article>
+
+          <!-- Proyek 2: KawanKia -->
+          <article class="project-showcase-card">
+            <div class="card-image-wrap">
+              <img src="kawankia.jpg" alt="Preview KawanKia" class="card-project-img">
+              <span class="card-badge-overlay">Matakuliah UI/UX</span>
+            </div>
+            <div class="card-content-body">
+              <span class="domain-tag">Healthcare & Public Service</span>
+              <h3 class="card-heading-title">KawanKia Mobile Application Prototype</h3>
+              <p class="card-description">
+                Prototipe aplikasi pemantauan tumbuh kembang dan pengingat jadwal imunisasi anak berbasis posyandu.
+              </p>
+              <div class="tech-stack-row mb-3">
+                <span>UI/UX Research</span>
+                <span>Prototype</span>
+                <span>User Testing</span>
               </div>
+              <!-- Tombol Pemicu Modal -->
+              <button type="button" class="btn btn-outline-danger btn-sm rounded-pill w-100 fw-bold mt-auto" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#projectModal" 
+                      data-title="KawanKia Mobile Application Prototype" 
+                      data-category="Healthcare & Public Service (UI/UX Research)" 
+                      data-img="kawankia.jpg"
+                      data-desc="KawanKia dirancang untuk membantu orang tua memantau grafik tumbuh kembang anak serta mengelola jadwal posyandu secara digital. Melalui riset pengguna mendalam, aplikasi ini mengusung desain yang ramah pengguna (user-friendly), aksesibilitas tinggi bagi ibu rumah tangga, dan sistem notifikasi pengingat imunisasi otomatis.">
+                <i class="bi bi-eye-fill me-1"></i> Lihat Penjelasan & Detail Proyek
+              </button>
             </div>
+          </article>
 
-            <div class="col-md-5 text-center">
-              <div class="position-relative d-inline-block">
-                <div class="portrait-box floating-portrait">
-                  <img src="profil.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80';" alt="Foto Profil Rospika Sarah Yosefin Siregar" class="img-fluid rounded-4 shadow-sm border-white border-3">
-                </div>
-                <div class="status-chip badge bg-white text-dark shadow-sm rounded-pill px-3 py-2 border">
-                  <span class="pulse-dot me-1"></span> Terbuka untuk Kolaborasi
-                </div>
+          <!-- Proyek 3: TheKitCo. -->
+          <article class="project-showcase-card">
+            <div class="card-image-wrap">
+              <img src="thekitco.png" alt="Preview TheKitCo" class="card-project-img">
+              <span class="card-badge-overlay">Keteknowirausahaan</span>
+            </div>
+            <div class="card-content-body">
+              <span class="domain-tag">E-Commerce & Outdoor</span>
+              <h3 class="card-heading-title">TheKitCo. Outdoor Rental Platform</h3>
+              <p class="card-description">
+                Konsep bisnis digital penyewaan perlengkapan berkemah dan pendakian gunung di kawasan wisata.
+              </p>
+              <div class="tech-stack-row mb-3">
+                <span>Business Model</span>
+                <span>Service Blueprint</span>
+                <span>Web Prototype</span>
               </div>
+              <!-- Tombol Pemicu Modal -->
+              <button type="button" class="btn btn-outline-danger btn-sm rounded-pill w-100 fw-bold mt-auto" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#projectModal" 
+                      data-title="TheKitCo. Outdoor Rental Platform" 
+                      data-category="E-Commerce & Outdoor (Keteknowirausahaan)" 
+                      data-img="thekitco.png"
+                      data-desc="TheKitCo adalah platform penyewaan alat outdoor terpadu yang memberikan kemudahan bagi pendaki dalam memesan perlengkapan berkualitas tinggi. Proyek ini mencakup perancangan Business Model Canvas (BMC), alur pemesanan logistik alat, jaminan kebersihan, serta integrasi sistem pembayaran digital instan.">
+                <i class="bi bi-eye-fill me-1"></i> Lihat Penjelasan & Detail Proyek
+              </button>
             </div>
-          </div>
-        </section>
+          </article>
 
-        <!-- SECTION 2: GRID PORTOFOLIO (MINIMAL 4 KARTU & MODAL TRIGGERS) -->
-        <section id="projects" class="p-4 mb-4 custom-panel rounded-4">
-          <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-2">
-            <div>
-              <span class="text-uppercase small fw-bold text-accent">Studi Kasus Nyata</span>
-              <h2 class="h3 fw-bold mb-0">Portofolio Karya & Inovasi</h2>
-            </div>
-            <span class="badge bg-white text-secondary border px-3 py-2 rounded-pill">4 Proyek Terintegrasi</span>
-          </div>
+        </div>
+      </section>
 
-          <!-- Grid Responsif: 1 Kolom Mobile, 2 Kolom Tablet, 2 Kolom Laptop -->
-          <div class="row row-cols-1 row-cols-md-2 g-4">
-            
-            <!-- Kartu 1: AndaliTrack -->
-            <div class="col">
-              <div class="card h-100 project-card border-0 shadow-sm rounded-4 overflow-hidden">
-                <div class="project-img-wrapper position-relative">
-                  <img src="andalitrack.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&auto=format&fit=crop&q=80';" class="card-img-top project-thumb" alt="AndaliTrack">
-                  <span class="position-absolute top-0 start-0 m-3 badge bg-dark-subtle text-dark border rounded-pill">GEMASTIK ICT</span>
-                </div>
-                <div class="card-body d-flex flex-column p-4">
-                  <span class="text-accent small fw-bold text-uppercase">Agrotech & Supply Chain</span>
-                  <h3 class="h5 fw-bold mt-1 card-title">AndaliTrack Traceability</h3>
-                  <p class="card-text text-secondary small flex-grow-1">
-                    Platform rantai pasok dan ketertelusuran panen andaliman di Toba, menghubungkan petani dengan pembeli industri.
-                  </p>
-                  <div class="d-flex flex-wrap gap-1 mb-3">
-                    <span class="badge badge-tag">Pitch Deck</span>
-                    <span class="badge badge-tag">ICT Business</span>
-                    <span class="badge badge-tag">Figma UI</span>
-                  </div>
-                  <button type="button" class="btn btn-outline-brand rounded-pill btn-sm w-100 py-2" data-bs-toggle="modal" data-bs-target="#modalAndalitrack">
-                    <i class="bi bi-box-arrow-up-right me-1"></i> Detail Spesifikasi Proyek
-                  </button>
-                </div>
-              </div>
-            </div>
+      <!-- ========================================================== -->
+      <!-- SECTION: RIWAYAT AKADEMIK (Poin Modul: Semantic Table) -->
+      <!-- ========================================================== -->
+      <section id="akademik" class="editorial-card interactive-hover mb-4">
+        <div class="section-intro">
+          <span class="section-kicker">Capaian Kurikulum</span>
+          <h2 class="section-title">Riwayat Akademik Terstruktur</h2>
+          <p class="section-summary">Rekapitulasi matakuliah inti Sistem Informasi yang ditempuh pada Semester Genap 2025/2026.</p>
+        </div>
 
-            <!-- Kartu 2: KawanKia -->
-            <div class="col">
-              <div class="card h-100 project-card border-0 shadow-sm rounded-4 overflow-hidden">
-                <div class="project-img-wrapper position-relative">
-                  <img src="kawankia.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&auto=format&fit=crop&q=80';" class="card-img-top project-thumb" alt="KawanKia">
-                  <span class="position-absolute top-0 start-0 m-3 badge bg-dark-subtle text-dark border rounded-pill">UI/UX Project</span>
-                </div>
-                <div class="card-body d-flex flex-column p-4">
-                  <span class="text-accent small fw-bold text-uppercase">Healthcare & Posyandu</span>
-                  <h3 class="h5 fw-bold mt-1 card-title">KawanKia Mobile App</h3>
-                  <p class="card-text text-secondary small flex-grow-1">
-                    Prototipe aplikasi pencatatan tumbuh kembang dan reminder jadwal imunisasi balita yang ramah keluarga.
-                  </p>
-                  <div class="d-flex flex-wrap gap-1 mb-3">
-                    <span class="badge badge-tag">User Research</span>
-                    <span class="badge badge-tag">Mobile UI</span>
-                    <span class="badge badge-tag">Accessibility</span>
-                  </div>
-                  <button type="button" class="btn btn-outline-brand rounded-pill btn-sm w-100 py-2" data-bs-toggle="modal" data-bs-target="#modalKawankia">
-                    <i class="bi bi-box-arrow-up-right me-1"></i> Detail Spesifikasi Proyek
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Kartu 3: TheKitCo. -->
-            <div class="col">
-              <div class="card h-100 project-card border-0 shadow-sm rounded-4 overflow-hidden">
-                <div class="project-img-wrapper position-relative">
-                  <img src="thekitco.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=600&auto=format&fit=crop&q=80';" class="card-img-top project-thumb" alt="TheKitCo">
-                  <span class="position-absolute top-0 start-0 m-3 badge bg-dark-subtle text-dark border rounded-pill">Technopreneur</span>
-                </div>
-                <div class="card-body d-flex flex-column p-4">
-                  <span class="text-accent small fw-bold text-uppercase">Outdoor Rental Service</span>
-                  <h3 class="h5 fw-bold mt-1 card-title">TheKitCo. Gear Rental</h3>
-                  <p class="card-text text-secondary small flex-grow-1">
-                    Solusi platform reservasi perlengkapan camping dan pendakian gunung berbasis sistem jaminan kelayakan.
-                  </p>
-                  <div class="d-flex flex-wrap gap-1 mb-3">
-                    <span class="badge badge-tag">BMC Model</span>
-                    <span class="badge badge-tag">Service Flow</span>
-                    <span class="badge badge-tag">Web UI</span>
-                  </div>
-                  <button type="button" class="btn btn-outline-brand rounded-pill btn-sm w-100 py-2" data-bs-toggle="modal" data-bs-target="#modalThekitco">
-                    <i class="bi bi-box-arrow-up-right me-1"></i> Detail Spesifikasi Proyek
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Kartu 4: Park-IT (Studi Kasus ke-4 Penegasan Mandiri) -->
-            <div class="col">
-              <div class="card h-100 project-card border-0 shadow-sm rounded-4 overflow-hidden">
-                <div class="project-img-wrapper position-relative">
-                  <img src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&auto=format&fit=crop&q=80" class="card-img-top project-thumb" alt="Park-IT">
-                  <span class="position-absolute top-0 start-0 m-3 badge bg-dark-subtle text-dark border rounded-pill">Java OOP & DB</span>
-                </div>
-                <div class="card-body d-flex flex-column p-4">
-                  <span class="text-accent small fw-bold text-uppercase">Smart Parking System</span>
-                  <h3 class="h5 fw-bold mt-1 card-title">Park-IT Management System</h3>
-                  <p class="card-text text-secondary small flex-grow-1">
-                    Aplikasi manajemen alokasi parkir kendaraan kampus dengan ORM Hibernate/JPA dan penyimpanan basis data relasional.
-                  </p>
-                  <div class="d-flex flex-wrap gap-1 mb-3">
-                    <span class="badge badge-tag">Java JPA</span>
-                    <span class="badge badge-tag">SQL Server</span>
-                    <span class="badge badge-tag">OOP Logic</span>
-                  </div>
-                  <button type="button" class="btn btn-outline-brand rounded-pill btn-sm w-100 py-2" data-bs-toggle="modal" data-bs-target="#modalParkit">
-                    <i class="bi bi-box-arrow-up-right me-1"></i> Detail Spesifikasi Proyek
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- SECTION 3: RIWAYAT AKADEMIK (DATA TABULAR BOOTSTRAP) -->
-        <section id="akademik" class="p-4 mb-4 custom-panel rounded-4">
-          <div class="mb-4">
-            <span class="text-uppercase small fw-bold text-accent">Kurikulum Semester Genap 2025/2026</span>
-            <h2 class="h3 fw-bold mb-0">Riwayat Akademik Terstruktur</h2>
-          </div>
-
-          <div class="table-responsive bg-white rounded-3 border custom-border-light shadow-sm">
-            <table class="table table-hover align-middle mb-0 custom-academic-table">
-              <caption class="px-3 small text-muted">Tabel 1.1: Rekapitulasi Capaian Matakuliah Inti S1 Sistem Informasi IT Del</caption>
-              <thead class="table-light">
+        <div class="table-card-wrapper">
+          <div class="table-scroll-layer">
+            <table class="academic-table">
+              <caption>Tabel 1.1: Rekapitulasi Capaian Matakuliah Inti Program Studi S1 Sistem Informasi</caption>
+              <thead>
                 <tr>
-                  <th scope="col" class="py-3 px-3">Kode MK</th>
-                  <th scope="col" class="py-3">Mata Kuliah & Fokus</th>
-                  <th scope="col" class="py-3 text-center">SKS</th>
-                  <th scope="col" class="py-3 text-center">Bidang</th>
-                  <th scope="col" class="py-3 text-center">Status</th>
+                  <th scope="col" class="th-code">Kode MK</th>
+                  <th scope="col">Nama Mata Kuliah</th>
+                  <th scope="col" class="text-center">SKS</th>
+                  <th scope="col" class="text-center">Bidang Kajian</th>
+                  <th scope="col" class="text-center">Status Evaluasi</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row" class="px-3 fw-bold text-accent">12S3101</th>
+                  <th scope="row" class="code-badge">12S3101</th>
                   <td>
-                    <div class="fw-bold">Pemrograman & Pengujian Aplikasi Web</div>
-                    <div class="small text-muted">Bootstrap 5, Semantic HTML5, WCAG 2.2 AA</div>
+                    <div class="subject-title">Pemrograman dan Pengujian Aplikasi Web</div>
+                    <div class="subject-sub">HTML5 Semantic, Modern CSS, WCAG 2.2 Level AA</div>
                   </td>
-                  <td class="text-center fw-bold">3</td>
-                  <td class="text-center"><span class="badge badge-subtle">Web Dev</span></td>
-                  <td class="text-center"><span class="badge bg-warning-subtle text-warning border rounded-pill">Sedang Ditempuh</span></td>
+                  <td class="text-center bold-sks">3</td>
+                  <td class="text-center"><span class="category-pill">Rekayasa Web</span></td>
+                  <td class="text-center"><span class="status-badge-progress">Sedang Ditempuh</span></td>
                 </tr>
                 <tr>
-                  <th scope="row" class="px-3 fw-bold text-accent">12S2103</th>
+                  <th scope="row" class="code-badge">12S2103</th>
                   <td>
-                    <div class="fw-bold">Pemrograman Berorientasi Objek</div>
-                    <div class="small text-muted">Java Collections, Persistence Architecture</div>
+                    <div class="subject-title">Pemrograman Berorientasi Objek</div>
+                    <div class="subject-sub">Java OOP, Persistence Mapping, Software Architecture</div>
                   </td>
-                  <td class="text-center fw-bold">3</td>
-                  <td class="text-center"><span class="badge badge-subtle">Software Eng.</span></td>
-                  <td class="text-center"><span class="badge bg-success-subtle text-success border rounded-pill">Lulus</span></td>
+                  <td class="text-center bold-sks">3</td>
+                  <td class="text-center"><span class="category-pill">Software Eng.</span></td>
+                  <td class="text-center"><span class="status-badge-success">Lulus</span></td>
                 </tr>
                 <tr>
-                  <th scope="row" class="px-3 fw-bold text-accent">12S2205</th>
+                  <th scope="row" class="code-badge">12S2205</th>
                   <td>
-                    <div class="fw-bold">Sistem Operasi</div>
-                    <div class="small text-muted">Process Management, Shared Memory, Linux</div>
+                    <div class="subject-title">Sistem Operasi</div>
+                    <div class="subject-sub">Process Concurrency, Memory Management, Linux CLI</div>
                   </td>
-                  <td class="text-center fw-bold">3</td>
-                  <td class="text-center"><span class="badge badge-subtle">Infrastructure</span></td>
-                  <td class="text-center"><span class="badge bg-success-subtle text-success border rounded-pill">Lulus</span></td>
+                  <td class="text-center bold-sks">3</td>
+                  <td class="text-center"><span class="category-pill">Infrastruktur</span></td>
+                  <td class="text-center"><span class="status-badge-success">Lulus</span></td>
                 </tr>
                 <tr>
-                  <th scope="row" class="px-3 fw-bold text-accent">12S3204</th>
+                  <th scope="row" class="code-badge">12S3204</th>
                   <td>
-                    <div class="fw-bold">Manajemen Proyek Sistem Informasi</div>
-                    <div class="small text-muted">Scope Management, WBS, Agile Lifecycle</div>
+                    <div class="subject-title">Manajemen Proyek Sistem Informasi</div>
+                    <div class="subject-sub">Scope, Work Breakdown Structure, Agile Methodologies</div>
                   </td>
-                  <td class="text-center fw-bold">2</td>
-                  <td class="text-center"><span class="badge badge-subtle">IT Governance</span></td>
-                  <td class="text-center"><span class="badge bg-success-subtle text-success border rounded-pill">Lulus</span></td>
+                  <td class="text-center bold-sks">2</td>
+                  <td class="text-center"><span class="category-pill">Tata Kelola IT</span></td>
+                  <td class="text-center"><span class="status-badge-success">Lulus</span></td>
                 </tr>
                 <tr>
-                  <th scope="row" class="px-3 fw-bold text-accent">12S1102</th>
+                  <th scope="row" class="code-badge">12S1102</th>
                   <td>
-                    <div class="fw-bold">Basis Data</div>
-                    <div class="small text-muted">Relational Normalization, SQL Query Tuning</div>
+                    <div class="subject-title">Basis Data</div>
+                    <div class="subject-sub">Relational Schema, Normalization, SQL Query Optimization</div>
                   </td>
-                  <td class="text-center fw-bold">3</td>
-                  <td class="text-center"><span class="badge badge-subtle">Data Eng.</span></td>
-                  <td class="text-center"><span class="badge bg-success-subtle text-success border rounded-pill">Lulus</span></td>
+                  <td class="text-center bold-sks">3</td>
+                  <td class="text-center"><span class="category-pill">Data Eng.</span></td>
+                  <td class="text-center"><span class="status-badge-success">Lulus</span></td>
                 </tr>
-              </tbody>
-              <tfoot class="table-light">
+              </thead>
+              <tfoot>
                 <tr>
-                  <td colspan="2" class="px-3 fw-bold">Total SKS Terdata</td>
-                  <td class="text-center fw-bold text-accent fs-6">14</td>
-                  <td colspan="2" class="text-center small text-secondary">Evaluasi Akademik Sangat Baik (Aktif)</td>
+                  <td colspan="2" class="tfoot-label">Total Beban SKS Terdata</td>
+                  <td class="text-center tfoot-val">14 SKS</td>
+                  <td colspan="2" class="text-center tfoot-sub">Status Akademik: Sangat Baik (Aktif)</td>
                 </tr>
               </tfoot>
             </table>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- SECTION 4: FORMULIR MODERNISASI (FLOATING LABELS, INPUT GROUP, VALIDATION) -->
-        <section id="services" class="p-4 p-md-5 mb-4 custom-panel rounded-4">
-          <div class="mb-4">
-            <span class="text-uppercase small fw-bold text-accent">Kolaborasi & Konsultasi</span>
-            <h2 class="h3 fw-bold mb-0">Formulir Reservasi Layanan Modern</h2>
-            <p class="text-secondary small mt-1">Menggunakan standardisasi komponen Bootstrap 5 dengan umpan balik validasi visual.</p>
-          </div>
+      <!-- ========================================================== -->
+      <!-- SECTION: FORMULIR LAYANAN (Poin Modul: Semantic Form & WCAG Focus) -->
+      <!-- ========================================================== -->
+      <section id="services" class="editorial-card interactive-hover">
+        <div class="section-intro">
+          <span class="section-kicker">Ruang Diskusi Terbuka</span>
+          <h2 class="section-title">Formulir Pesan Layanan & Kolaborasi</h2>
+          <p class="section-summary">Ajukan kebutuhan perancangan produk digital, riset alur bisnis, atau konsultasi antarmuka web.</p>
+        </div>
 
-          <form class="needs-validation" novalidate>
-            
-            <fieldset class="p-4 bg-white rounded-3 border custom-border-light mb-4">
-              <legend class="float-none w-auto px-2 fs-6 fw-bold text-accent">01 / Identitas Koresponden</legend>
-              
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <!-- Floating Label dengan Validasi -->
-                  <div class="form-floating">
-                    <input type="text" class="form-control custom-input" id="floatingName" placeholder="Nama Lengkap" required>
-                    <label for="floatingName"><i class="bi bi-person me-1"></i> Nama Lengkap *</label>
-                    <div class="valid-feedback">Nama telah diisi dengan benar.</div>
-                    <div class="invalid-feedback">Nama lengkap wajib dicantumkan.</div>
-                  </div>
-                </div>
+        <form class="consultation-form" action="#" method="POST">
+          
+          <fieldset class="clean-fieldset">
+            <legend>01 / Identitas Koresponden</legend>
 
-                <div class="col-md-6">
-                  <!-- Input Group Berikon + Floating Label -->
-                  <div class="form-floating">
-                    <input type="email" class="form-control custom-input" id="floatingEmail" placeholder="nama@del.ac.id" required>
-                    <label for="floatingEmail"><i class="bi bi-envelope me-1"></i> Email Institusi / Bisnis *</label>
-                    <div class="valid-feedback">Format email valid.</div>
-                    <div class="invalid-feedback">Alamat email valid wajib disertakan.</div>
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <!-- Input Group dengan Awalan Ikon Telepon -->
-                  <div class="input-group has-validation">
-                    <span class="input-group-text bg-light text-muted border-end-0"><i class="bi bi-whatsapp"></i></span>
-                    <div class="form-floating is-invalid flex-grow-1">
-                      <input type="tel" class="form-control custom-input border-start-0" id="floatingPhone" placeholder="081234567890" required>
-                      <label for="floatingPhone">Nomor WhatsApp Aktif *</label>
-                    </div>
-                    <div class="invalid-feedback">Nomor kontak aktif wajib dicantumkan.</div>
-                  </div>
-                </div>
+            <div class="grid-form-row">
+              <div class="form-control-item">
+                <label for="fullName">Nama Lengkap Anda <span class="required-indicator">*</span></label>
+                <input type="text" id="fullName" name="fullName" class="form-text-input" required placeholder="Contoh: Rospika Sarah Yosefin Siregar">
               </div>
-            </fieldset>
 
-            <fieldset class="p-4 bg-white rounded-3 border custom-border-light mb-4">
-              <legend class="float-none w-auto px-2 fs-6 fw-bold text-accent">02 / Spesifikasi Kebutuhan Proyek</legend>
-              
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <select class="form-select custom-input" id="floatingCategory" required>
-                      <option value="" selected disabled>Pilih domain kolaborasi...</option>
-                      <option value="1">Perancangan Model Bisnis ICT & Pitch Deck</option>
-                      <option value="2">UI/UX Prototyping & Riset Pengguna (Figma)</option>
-                      <option value="3">Frontend Web Semantik & Aksesibilitas WCAG</option>
-                    </select>
-                    <label for="floatingCategory"><i class="bi bi-diagram-3 me-1"></i> Domain Layanan</label>
-                    <div class="invalid-feedback">Silakan pilih salah satu domain layanan.</div>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="number" class="form-control custom-input" id="floatingScope" min="1" max="25" placeholder="5" value="1">
-                    <label for="floatingScope"><i class="bi bi-layers me-1"></i> Estimasi Modul / Layar</label>
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea class="form-control custom-input" placeholder="Tuliskan gambaran proyek..." id="floatingDetails" style="height: 120px" required></textarea>
-                    <label for="floatingDetails"><i class="bi bi-pencil me-1"></i> Uraian Ringkas Masalah & Tujuan *</label>
-                    <div class="invalid-feedback">Uraian ringkas proyek wajib diisi.</div>
-                  </div>
-                </div>
-
-                <div class="col-12 mt-3">
-                  <!-- Checkbox Bootstrap Wajib -->
-                  <div class="form-check">
-                    <input class="form-check-input custom-checkbox" type="checkbox" value="" id="agreementCheck" required>
-                    <label class="form-check-label small text-secondary" for="agreementCheck">
-                      Saya mengonfirmasi bahwa data yang saya kirimkan adalah valid dan menyetujui ketentuan kolaborasi akademik/profesional.
-                    </label>
-                    <div class="invalid-feedback">Anda wajib mencentang persetujuan ini sebelum mengirimkan formulir.</div>
-                  </div>
-                </div>
+              <div class="form-control-item">
+                <label for="userEmail">Email Resmi / Institusi <span class="required-indicator">*</span></label>
+                <input type="email" id="userEmail" name="userEmail" class="form-text-input" required placeholder="nama@del.ac.id">
               </div>
-            </fieldset>
+            </div>
 
-            <button class="btn btn-brand-action w-100 py-3 rounded-3 fw-bold shadow-sm" type="submit">
-              <i class="bi bi-send-fill me-2"></i> Ajukan Permintaan Konsultasi Layanan
-            </button>
-          </form>
-        </section>
+            <div class="form-control-item">
+              <label for="userPhone">Nomor WhatsApp / Kontak Aktif <span class="required-indicator">*</span></label>
+              <input type="tel" id="userPhone" name="userPhone" class="form-text-input" required placeholder="0812-3456-7890">
+            </div>
+          </fieldset>
 
-      </main>
+          <fieldset class="clean-fieldset">
+            <legend>02 / Spesifikasi Kebutuhan Proyek</legend>
 
-      <!-- ASIDE / SIDEBAR SEMANTIK (4 KOLOM DESKTOP) -->
-      <aside class="col-lg-4">
-        
-        <!-- Kartu 1: Organisasi BEM IPTEK -->
-        <div class="p-4 mb-4 custom-panel rounded-4 shadow-sm">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="bi bi-people-fill text-accent fs-4"></i>
-            <h3 class="h5 fw-bold mb-0">Organisasi Mahasiswa</h3>
-          </div>
-          <div class="fw-bold text-dark">Anggota Departemen IPTEK</div>
-          <div class="small text-accent fw-bold mb-2">BEM Institut Teknologi Del</div>
-          <p class="small text-secondary mb-0">
-            Menginisiasi program wawasan sains dan teknologi informasi serta menyelenggarakan fasilitas eksplorasi rekayasa perangkat lunak bagi mahasiswa.
+            <div class="grid-form-row">
+              <div class="form-control-item">
+                <label for="pageScope">Perkiraan Jumlah Layar / Modul</label>
+                <input type="number" id="pageScope" name="pageScope" class="form-text-input" min="1" max="30" placeholder="1">
+              </div>
+
+              <div class="form-control-item">
+                <label for="serviceCategory">Peminatan Kolaborasi</label>
+                <select id="serviceCategory" name="serviceCategory" class="form-text-input">
+                  <option value="ict-business">Perancangan Model Bisnis ICT & Pitch Deck</option>
+                  <option value="uiux-prototype">UI/UX Prototyping & Riset Pengguna (Figma)</option>
+                  <option value="accessible-web">Frontend Semantik HTML5 & Aksesibilitas WCAG</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-control-item">
+              <span class="label-heading">Urgensi Linimasa Pengerjaan:</span>
+              <div class="inline-options-wrap">
+                <label class="custom-radio-label">
+                  <input type="radio" name="projectTimeline" value="normal" checked> Linimasa Standar (2-3 Minggu)
+                </label>
+                <label class="custom-radio-label">
+                  <input type="radio" name="projectTimeline" value="express"> Linimasa Cepat (Sprint 1 Minggu)
+                </label>
+              </div>
+            </div>
+
+            <div class="form-control-item">
+              <span class="label-heading">Spesifikasi Tambahan yang Diharapkan:</span>
+              <div class="inline-options-wrap">
+                <label class="custom-check-label">
+                  <input type="checkbox" name="reqResponsive" value="yes" checked> Tampilan Responsif Mobile Penuh
+                </label>
+                <label class="custom-check-label">
+                  <input type="checkbox" name="reqFigma" value="yes"> Disertai File Master Desain Sistem (Figma)
+                </label>
+              </div>
+            </div>
+
+            <div class="form-control-item">
+              <label for="projectDetails">Deskripsi Singkat Rencana Proyek <span class="required-indicator">*</span></label>
+              <textarea id="projectDetails" name="projectDetails" rows="4" class="form-text-input" required placeholder="Tuliskan latar belakang masalah, sasaran pengguna, dan target yang ingin dicapai..."></textarea>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="submit-button">Ajukan Formulir Kolaborasi</button>
+        </form>
+      </section>
+
+    </main>
+
+    <!-- ========================================================== -->
+    <!-- SECTION: SIDEBAR / ASIDE (Poin Modul: Unordered List & Organization) -->
+    <!-- ========================================================== -->
+    <aside class="sidebar-column">
+      
+      <!-- Widget Organisasi: BEM IT Del IPTEK -->
+      <div class="aside-panel-card interactive-hover">
+        <h3 class="panel-heading">Kepemimpinan & Organisasi</h3>
+        <div class="org-item">
+          <div class="org-role">Anggota Departemen IPTEK</div>
+          <div class="org-name">Badan Eksekutif Mahasiswa (BEM) IT Del</div>
+          <p class="org-desc">
+            Menginisiasi program pembinaan wawasan sains, eksplorasi teknologi informasi terapan, serta mendorong literasi digital bagi sivitas akademika.
           </p>
         </div>
+      </div>
 
-        <!-- Kartu 2: Keahlian (Unordered List Bootstrap Badges) -->
-        <div class="p-4 mb-4 custom-panel rounded-4 shadow-sm">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="bi bi-tools text-accent fs-4"></i>
-            <h3 class="h5 fw-bold mb-0">Keahlian & Toolset (UL)</h3>
-          </div>
-          <ul class="list-unstyled d-flex flex-wrap gap-2 mb-0">
-            <li><span class="badge badge-tag py-2 px-3">Bootstrap 5.3 CDN</span></li>
-            <li><span class="badge badge-tag py-2 px-3">HTML5 Semantic</span></li>
-            <li><span class="badge badge-tag py-2 px-3">Advanced CSS Selectors</span></li>
-            <li><span class="badge badge-tag py-2 px-3">CSS Variables (:root)</span></li>
-            <li><span class="badge badge-tag py-2 px-3">Figma Prototyping</span></li>
-            <li><span class="badge badge-tag py-2 px-3">WCAG 2.2 Level AA</span></li>
-            <li><span class="badge badge-tag py-2 px-3">Git & GitHub Pages</span></li>
-          </ul>
-        </div>
+      <!-- Widget Keahlian Teknis (Unordered List Wajib Modul) -->
+      <div class="aside-panel-card interactive-hover">
+        <h3 class="panel-heading">Keahlian & Toolset (Unordered List)</h3>
+        <ul class="skills-pill-list">
+          <li>Business Process Modeling (BPMN)</li>
+          <li>ICT Pitch & Value Proposition</li>
+          <li>Figma UI/UX Prototyping</li>
+          <li>Arsitektur Semantik HTML5</li>
+          <li>CSS Box Model, Flexbox & Grid</li>
+          <li>WCAG 2.2 Level AA Standard</li>
+          <li>Version Control (Git & GitHub)</li>
+        </ul>
+      </div>
 
-        <!-- Kartu 3: Afiliasi Institusi Kampus -->
-        <div class="p-4 custom-panel rounded-4 shadow-sm border-start border-4 border-accent">
-          <span class="text-uppercase small text-muted fw-bold">Afiliasi Kampus</span>
-          <div class="fw-bold fs-5 text-dark mt-1">Institut Teknologi Del</div>
-          <div class="small text-secondary">FITE &bull; S1 Sistem Informasi</div>
-          <div class="small text-muted mt-2"><i class="bi bi-geo-alt me-1"></i> Sitoluama, Laguboti, Toba</div>
-        </div>
+      <!-- Widget Afiliasi Akademik -->
+      <div class="aside-panel-card highlight-panel">
+        <div class="badge-mini">Afiliasi Institusi</div>
+        <div class="inst-title">Institut Teknologi Del</div>
+        <p class="inst-sub">Fakultas Informatika & Teknik Elektro &bull; S1 Sistem Informasi</p>
+        <p class="inst-loc">Sitoluama, Laguboti, Toba, Sumatera Utara</p>
+      </div>
 
-      </aside>
+    </aside>
 
-    </div>
   </div>
 
-  <!-- FOOTER SEMANTIK -->
-  <footer class="bg-white border-top custom-border-light py-4 mt-5">
-    <div class="container text-center text-secondary small">
-      <p class="mb-1">&copy; 2026 Rospika Sarah Yosefin Siregar. Pemrograman & Pengujian Aplikasi Web &bull; Institut Teknologi Del.</p>
-      <p class="text-muted mb-0">Refactored to Bootstrap 5.3 & Advanced CSS Overrides (Week 3 Assignment).</p>
+  <!-- ========================================================== -->
+  <!-- SECTION: FOOTER -->
+  <!-- ========================================================== -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Rospika Sarah Yosefin Siregar. Pemrograman dan Pengujian Aplikasi Web — Institut Teknologi Del.</p>
     </div>
   </footer>
 
-  <!-- =======================================================
-       BOOTSTRAP 5 MODAL DIALOGS (MINIMAL 2 DENGAN ISI BERBEDA)
-       ======================================================= -->
-
-  <!-- Modal 1: Detail AndaliTrack -->
-  <div class="modal fade" id="modalAndalitrack" tabindex="-1" aria-labelledby="modalAndalitrackLabel" aria-hidden="true">
+  <!-- ========================================================== -->
+  <!-- BOOTSTRAP 5 MODAL DIALOG UNTUK DETAIL PROYEK & GAMBAR -->
+  <!-- ========================================================== -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content rounded-4 border-0 shadow">
-        <div class="modal-header border-0 pb-0">
-          <h1 class="modal-title fs-5 fw-bold" id="modalAndalitrackLabel">
-            <i class="bi bi-award-fill text-accent me-2"></i> AndaliTrack &mdash; Solusi Agrotech Andaliman
-          </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 18px;">
+        <div class="modal-header border-bottom-0 pb-0 pt-4 px-4">
+          <span class="badge bg-light text-secondary border px-3 py-1 rounded-pill" id="modalCategory">Kategori Proyek</span>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body p-4">
-          <p class="text-secondary">
-            <strong>AndaliTrack</strong> merupakan gagasan model bisnis TIK yang dirancang untuk kompetisi nasional <strong>GEMASTIK Divisi ICT Business</strong>. Solusi ini menjawab persoalan fluktuasi harga komoditas andaliman dan rantai distribusi yang panjang di wilayah Toba.
-          </p>
-          <h6 class="fw-bold mt-3 text-dark">Deliverables & Arsitektur Solusi:</h6>
-          <ul class="small text-secondary ps-3">
-            <li><strong>Model Bisnis:</strong> Pitch deck komprehensif, Business Model Canvas (BMC), dan analisis TAM-SAM-SOM.</li>
-            <li><strong>Traceability System:</strong> Pelacakan batch panen rempah berbasis QR Code untuk jaminan mutu industri.</li>
-            <li><strong>UI/UX:</strong> Prototipe alur transaksi digital antara kelompok tani lokal dan mitra pembeli skala besar.</li>
-          </ul>
+        <div class="modal-body px-4 py-3">
+          <h3 class="modal-title fs-4 fw-bold text-dark mb-3" id="projectModalLabel">Judul Proyek</h3>
+          
+          <!-- Gambar Terkait Proyek di Dalam Modal -->
+          <div class="mb-3 rounded-3 overflow-hidden border bg-light" style="max-height: 280px;">
+            <img id="modalImage" src="" alt="Ilustrasi Proyek" class="w-100 h-100 object-fit-cover" style="max-height: 280px;">
+          </div>
+
+          <p class="text-secondary lh-base fs-6" id="modalDesc">Penjelasan detail mengenai proyek ini akan tampil secara dinamis.</p>
+          
+          <div class="alert alert-light border mt-3 small text-secondary">
+            <i class="bi bi-person-workspace text-danger me-2"></i><strong>Peran Pengembang:</strong> Bertanggung jawab penuh sebagai <em>Frontend & UI/UX Developer</em> dalam merancang dialog interaktif, integrasi visual modern, serta memastikan kenyamanan aksesibilitas pengguna.
+          </div>
         </div>
-        <div class="modal-footer border-0">
-          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup Dialog</button>
+        <div class="modal-footer border-top-0 pb-4 px-4">
+          <button type="button" class="btn btn-secondary btn-sm px-4 rounded-pill" data-bs-dismiss="modal">Tutup Penjelasan</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal 2: Detail KawanKia -->
-  <div class="modal fade" id="modalKawankia" tabindex="-1" aria-labelledby="modalKawankiaLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content rounded-4 border-0 shadow">
-        <div class="modal-header border-0 pb-0">
-          <h1 class="modal-title fs-5 fw-bold" id="modalKawankiaLabel">
-            <i class="bi bi-heart-pulse-fill text-accent me-2"></i> KawanKia &mdash; Monitoring Imunisasi Anak
-          </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-        </div>
-        <div class="modal-body p-4">
-          <p class="text-secondary">
-            <strong>KawanKia</strong> adalah prototipe aplikasi mobile layanan kesehatan masyarakat yang berfokus membantu ibu dan kader Posyandu dalam mendokumentasikan serta memantau jadwal vaksinasi wajib balita.
-          </p>
-          <h6 class="fw-bold mt-3 text-dark">Metodologi & Pengujian UI/UX:</h6>
-          <ul class="small text-secondary ps-3">
-            <li><strong>User Research:</strong> Wawancara terstruktur bersama orang tua dan pengelola layanan posyandu balita.</li>
-            <li><strong>Accessibility Testing:</strong> Mengadopsi kontras warna berstandar WCAG 2.2 AA untuk kemudahan membaca di ruang terbuka.</li>
-            <li><strong>High-Fidelity Prototype:</strong> Alur notifikasi berkala, kartu digital tumbuh kembang, dan direktori faskes terdekat.</li>
-          </ul>
-        </div>
-        <div class="modal-footer border-0">
-          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup Dialog</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 3: Detail TheKitCo -->
-  <div class="modal fade" id="modalThekitco" tabindex="-1" aria-labelledby="modalThekitcoLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-4 border-0 shadow">
-        <div class="modal-header border-0 pb-0">
-          <h1 class="modal-title fs-5 fw-bold" id="modalThekitcoLabel">TheKitCo. Outdoor Rental</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-        </div>
-        <div class="modal-body p-4 text-secondary small">
-          Platform digital penyewaan alat kegiatan pendakian gunung dan berkemah yang mengutamakan inspeksi keamanan alat, fleksibilitas durasi sewa, dan integrasi pemandu lokal.
-        </div>
-        <div class="modal-footer border-0">
-          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 4: Detail Park-IT -->
-  <div class="modal fade" id="modalParkit" tabindex="-1" aria-labelledby="modalParkitLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-4 border-0 shadow">
-        <div class="modal-header border-0 pb-0">
-          <h1 class="modal-title fs-5 fw-bold" id="modalParkitLabel">Park-IT Management System</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-        </div>
-        <div class="modal-body p-4 text-secondary small">
-          Sistem alokasi slot parkir kampus berbasis Java Object-Oriented Programming, menerapkan persistence architecture dengan Hibernate/JPA dan SQL Server.
-        </div>
-        <div class="modal-footer border-0">
-          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BOOTSTRAP 5.3 JS BUNDLE VIA CDN (Wajib untuk Modal & Navbar Collapse) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Script Validasi Form Bawaan Bootstrap (Client-Side Validation) -->
+  <!-- Bootstrap 5.3.3 JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <!-- Skrip Penggerak Dinamis Data ke Modal -->
   <script>
-    (() => {
-      'use strict'
-      const forms = document.querySelectorAll('.needs-validation')
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
+    const projectModal = document.getElementById('projectModal');
+    if (projectModal) {
+      projectModal.addEventListener('show.bs.modal', event => {
+        const button = event.relatedTarget;
+        const title = button.getAttribute('data-title');
+        const category = button.getAttribute('data-category');
+        const desc = button.getAttribute('data-desc');
+        const imgSrc = button.getAttribute('data-img');
+
+        projectModal.querySelector('.modal-title').textContent = title;
+        projectModal.querySelector('#modalCategory').textContent = category;
+        projectModal.querySelector('#modalDesc').textContent = desc;
+        projectModal.querySelector('#modalImage').src = imgSrc;
+      });
+    }
   </script>
 </body>
 </html>
