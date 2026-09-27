@@ -7,7 +7,7 @@ Repositori ini berisi kode sumber (*source code*) untuk halaman web portofolio p
 ## 👤 Identitas Pengembang
 
 * **Nama Lengkap:** Rospika Sarah Yosefin Siregar
-* **NIM:** [Masukkan NIM Anda]
+* **NIM:** 12S24008
 * **Program Studi:** S1 Sistem Informasi
 * **Fakultas:** Fakultas Informatika dan Teknik Elektro
 * **Institusi:** Institut Teknologi Del
