@@ -1,0 +1,20 @@
+[
+  {
+    "id": "srv-1",
+    "packageName": "Web Portfolio Basic",
+    "price": "Rp 500.000",
+    "features": ["Responsive Design", "Bootstrap 5", "Contact Form"]
+  },
+  {
+    "id": "srv-2",
+    "packageName": "Custom Web App",
+    "price": "Rp 1.500.000",
+    "features": ["Dynamic CSR", "RESTful API Integration", "Local Storage State"]
+  },
+  {
+    "id": "srv-3",
+    "packageName": "AI Integration Portal",
+    "price": "Rp 3.000.000",
+    "features": ["AI Chat Support", "Advanced Analytics", "Secure Data Dispatch"]
+  }
+]

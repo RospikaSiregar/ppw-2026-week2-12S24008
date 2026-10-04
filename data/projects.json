@@ -1,0 +1,30 @@
+[
+  {
+    "id": "project-1",
+    "title": "AndaliTrack",
+    "category": "Logistics System",
+    "thumbnail": "assets/andalitrack.png",
+    "description": "Sistem pelacakan dan manajemen logistik berbasis digital untuk memantau pengiriman barang secara real-time."
+  },
+  {
+    "id": "project-2",
+    "title": "KawanKia",
+    "category": "Health Tech",
+    "thumbnail": "assets/kawankia.jpg",
+    "description": "Platform pendampingan kesehatan dan tumbuh kembang anak untuk membantu orang tua memantau gizi balita."
+  },
+  {
+    "id": "project-3",
+    "title": "TheKitCo.",
+    "category": "E-Commerce",
+    "thumbnail": "assets/thekitco.png",
+    "description": "Layanan penyewaan perlengkapan petualangan dan outdoor secara digital dengan pemesanan terpadu."
+  },
+  {
+    "id": "project-4",
+    "title": "Pelajarin.ai Integration System",
+    "category": "EduTech & AI Support",
+    "thumbnail": "assets/pelajarin.jpg",
+    "description": "Platform penunjang pembelajaran akademik cerdas berbasis integrasi AI untuk membantu mahasiswa memahami materi."
+  }
+]

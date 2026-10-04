@@ -1,0 +1,47 @@
+:root {
+    --primary-color: #d88395;
+    --bg-pastel: #fdf2f4;
+    --text-main: #4a4a4a;
+}
+
+body.main-layout {
+    background-color: var(--bg-pastel);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Mengatur agar kartu proyek memiliki tinggi yang seragam dan rapi */
+.project-showcase-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.project-showcase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(216, 131, 149, 0.2);
+}
+
+/* Memastikan gambar di dalam kartu proporsional */
+.card-project-img {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Mengatur bagian isi teks agar tombol selalu berada di bawah secara rapi */
+.card-content-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content-body p {
+    flex-grow: 1;
+}
