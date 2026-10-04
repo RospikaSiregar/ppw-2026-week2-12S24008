@@ -46,7 +46,7 @@ class PortfolioApp {
         } else if (status === 'error') {
             errorEl.classList.remove('d-none');
             containerEl.classList.add('d-none');
-            errorEl.textContent = `Gagal memuat data: ${this.state.error}`;
+            errorEl.textContent = `Gagal memuat data proyek: ${this.state.error}`;
         }
     }
 
@@ -55,77 +55,82 @@ class PortfolioApp {
         if (!container) return;
 
         container.innerHTML = projects.map(proj => `
-            <div class="col-md-4 mb-4">
-                <article class="project-showcase-card h-100 p-3 shadow-sm rounded border bg-white">
-                    <div class="card-image-wrap position-relative mb-3">
-                        <img src="${proj.thumbnail}" alt="${proj.title}" class="card-project-img img-fluid rounded w-100" style="height: 180px; object-fit: cover;">
-                        <span class="card-badge-overlay badge bg-secondary position-absolute top-0 end-0 m-2">${proj.category}</span>
+            <article class="project-showcase-card">
+                <div class="card-image-wrap">
+                    <img src="${proj.thumbnail}" alt="Preview ${proj.title}" class="card-project-img">
+                    <span class="card-badge-overlay">${proj.badge}</span>
+                </div>
+                <div class="card-content-body">
+                    <span class="domain-tag">${proj.domain}</span>
+                    <h3 class="card-heading-title">${proj.title}</h3>
+                    <p class="card-description">${proj.description}</p>
+                    <div class="tech-stack-row mb-3">
+                        ${proj.tech.map(t => `<span>${t}</span>`).join('')}
                     </div>
-                    <div class="card-content-body d-flex flex-column h-50">
-                        <h3 class="card-heading-title h5 fw-bold">${proj.title}</h3>
-                        <p class="text-secondary small">${proj.description.substring(0, 80)}...</p>
-                        <button type="button" class="btn btn-outline-danger btn-sm rounded-pill w-100 fw-bold mt-auto"
-                                onclick="app.openProjectModal('${proj.id}')">
-                            <i class="bi bi-eye-fill me-1"></i> Lihat Penjelasan & Detail
-                        </button>
-                    </div>
-                </article>
-            </div>
+                    <button type="button" class="btn btn-outline-danger btn-sm rounded-pill w-100 fw-bold mt-auto" 
+                            onclick="app.openUniversalModal('${proj.id}')">
+                        <i class="bi bi-eye-fill me-1"></i> Lihat Penjelasan & Detail Proyek
+                    </button>
+                </div>
+            </article>
         `).join('');
     }
 
     renderServices(services) {
-        const serviceSelect = document.getElementById('servicePackageSelect');
-        if (!serviceSelect) return;
-        
-        serviceSelect.innerHTML = '<option value="" selected disabled>Pilih Paket Layanan...</option>' + 
-            services.map(srv => `<option value="${srv.packageName}">${srv.packageName} - ${srv.price}</option>`).join('');
+        const selectEl = document.getElementById('serviceCategory');
+        if (!selectEl) return;
+
+        selectEl.innerHTML = '<option value="" selected disabled>Pilih Peminatan Kolaborasi...</option>' +
+            services.map(srv => `<option value="${srv.packageName}">${srv.packageName}</option>`).join('');
     }
 
-    openProjectModal(projectId) {
+    openUniversalModal(projectId) {
         const proj = this.state.projects.find(p => p.id === projectId);
         if (!proj) return;
 
-        document.getElementById('projectModalTitle').textContent = proj.title;
-        document.getElementById('projectModalBody').innerHTML = `
-            <img src="${proj.thumbnail}" class="img-fluid rounded mb-3 w-100" alt="${proj.title}" style="max-height: 250px; object-fit: cover;">
-            <p class="text-secondary">${this.escapeHTML(proj.description)}</p>
-            <div class="badge bg-primary px-3 py-2">${proj.category}</div>
-        `;
+        document.getElementById('modalCategory').textContent = proj.category;
+        document.getElementById('projectModalLabel').textContent = proj.title;
+        document.getElementById('modalImage').src = proj.thumbnail;
+        document.getElementById('modalDesc').textContent = proj.description;
 
-        const modalEl = document.getElementById('universalProjectModal');
+        const modalEl = document.getElementById('projectModal');
         bootstrap.Modal.getOrCreateInstance(modalEl).show();
     }
 
-    escapeHTML(str) {
-        return str.replace(/[&<>'"]/g, 
-            tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-        );
-    }
-
     setupEventListeners() {
-        const form = document.getElementById('serviceOrderForm');
+        const form = document.querySelector('.consultation-form');
         if (!form) return;
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const formData = new FormData(form);
-            const payload = Object.fromEntries(formData.entries());
-            const submitBtn = form.querySelector('button[type="submit"]');
+            
+            const fullName = document.getElementById('fullName').value;
+            const userEmail = document.getElementById('userEmail').value;
+            const serviceCategory = document.getElementById('serviceCategory').value;
+            const projectDetails = document.getElementById('projectDetails').value;
+
+            if (!fullName || !userEmail || !projectDetails) {
+                form.classList.add('was-validated');
+                return;
+            }
+
+            const payload = { fullName, userEmail, serviceCategory, projectDetails };
+            const submitBtn = form.querySelector('.submit-button');
 
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Mengirim...';
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Mengirim Formulir...';
 
             try {
                 await ApiService.submitServiceOrder(payload);
                 this.saveOrderToLocalStorage(payload);
-                this.showToastNotification('Sukses!', 'Permintaan layanan berhasil diproses.');
+                this.showToastNotification('Sukses!', 'Formulir kolaborasi berhasil dikirim melalui API.');
                 form.reset();
+                form.classList.remove('was-validated');
             } catch (err) {
-                this.showToastNotification('Gagal!', 'Terjadi kesalahan pengiriman.', 'danger');
+                this.showToastNotification('Gagal!', 'Terjadi kesalahan jaringan.', 'danger');
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Kirim Permintaan';
+                submitBtn.innerHTML = 'Ajukan Formulir Kolaborasi';
             }
         });
     }
@@ -138,7 +143,10 @@ class PortfolioApp {
 
     showToastNotification(title, message) {
         const toastEl = document.getElementById('liveToast');
-        if (!toastEl) return;
+        if (!toastEl) {
+            alert(`${title}: ${message}`);
+            return;
+        }
         document.getElementById('toastTitle').textContent = title;
         document.getElementById('toastBody').textContent = message;
         const toast = new bootstrap.Toast(toastEl);

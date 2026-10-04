@@ -1,144 +1,372 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Rospika Sarah Yosefin Siregar</title>
-    <!-- Bootstrap 5.3.3 CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/custom-style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rospika Sarah Yosefin Siregar | Portfolio Mahasiswa Sistem Informasi</title>
+  
+  <!-- Bootstrap 5.3.3 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="custom-style.css">
 </head>
-<body class="main-layout container my-5">
+<body>
 
-    <!-- Header & Navigasi Lengkap -->
-    <header class="mb-5">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded px-3 py-3">
-            <div class="d-flex align-items-center">
-                <span class="badge bg-danger me-2 p-2 rounded-3">RS</span>
-                <div>
-                    <h1 class="h6 mb-0 fw-bold text-dark">Rospika Siregar</h1>
-                    <small class="text-muted" style="font-size: 0.75rem;">S1 Sistem Informasi</small>
-                </div>
-            </div>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link px-2" href="#about">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link px-2" href="#projects">Portofolio Karya</a></li>
-                    <li class="nav-item"><a class="nav-link px-2" href="#academic">Riwayat Akademik</a></li>
-                    <li class="nav-item"><a class="nav-link px-2" href="#contact">Pesan Layanan</a></li>
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                        <a href="#contact" class="btn btn-danger btn-sm rounded-pill px-3 fw-bold">Mulai Kolaborasi</a>
-                    </li>
-                </ul>
-            </div>
+  <!-- ========================================================== -->
+  <!-- SECTION: HEADER & NAVIGASI UTAMA -->
+  <!-- ========================================================== -->
+  <header class="navbar navbar-expand-lg navbar-light fixed-top navbar-wrapper">
+    <div class="container">
+      <a href="#" class="brand-monogram text-decoration-none">
+        <span class="monogram-box">RS</span>
+        <div class="brand-text">
+          <span class="brand-name">Rospika Siregar</span>
+          <span class="brand-role">S1 Sistem Informasi</span>
+        </div>
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <nav class="nav-links-area" aria-label="Navigasi Utama">
+          <ul class="navbar-nav align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Portofolio Karya</a></li>
+            <li class="nav-item"><a class="nav-link" href="#akademik">Riwayat Akademik</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Pesan Layanan</a></li>
+          </ul>
         </nav>
-    </header>
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <a href="#services" class="cta-pill-nav text-decoration-none">Mulai Kolaborasi</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
+  <!-- Running Ticker Kreatif -->
+  <div class="ticker-strip" aria-hidden="true">
+    <div class="ticker-track">
+      <span>&bull; DIGITAL SOLUTION INNOVATION</span>
+      <span>&bull; UI/UX PROTOTYPING & RESEARCH</span>
+      <span>&bull; BUSINESS PROCESS MODELING</span>
+      <span>&bull; ACCESSIBLE WEB WCAG 2.2</span>
+      <span>&bull; SISTEM INFORMASI IT DEL</span>
+      <span>&bull; DIGITAL SOLUTION INNOVATION</span>
+      <span>&bull; UI/UX PROTOTYPING & RESEARCH</span>
+      <span>&bull; BUSINESS PROCESS MODELING</span>
+      <span>&bull; ACCESSIBLE WEB WCAG 2.2</span>
+      <span>&bull; SISTEM INFORMASI IT DEL</span>
+    </div>
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- PEMBUNGKUS UTAMA TATA LETAK GRID -->
+  <!-- ========================================================== -->
+  <div class="main-layout container my-5">
+    
     <main class="w-100">
-        <!-- Bagian Hero / Tentang Pengembang -->
-        <section id="about" class="row mb-5 align-items-center bg-white p-4 p-lg-5 rounded-4 shadow-sm">
-            <div class="col-lg-7 mb-4 mb-lg-0">
-                <span class="badge bg-light text-danger border border-danger mb-3 px-3 py-2 rounded-pill">
-                    <i class="bi bi-info-circle me-1"></i> Sistem Informasi • Institut Teknologi Del
-                </span>
-                <h2 class="display-6 fw-bold text-dark mb-3">
-                    Hi, I am Rospika Sarah Yosefin Siregar I'm undergraduate student of Information Systems at Institut Teknologi Del
-                </h2>
-                <p class="text-secondary lead fs-6 mb-4">
-                    Mahasiswa Sistem Informasi di Institut Teknologi Del dengan fokus pada analisis kebutuhan bisnis digital, perancangan antarmuka prototipe teruji, dan rekayasa web terstruktur yang patuh pada standar aksesibilitas WCAG 2.2 Level AA.
-                </p>
-                <div class="d-flex gap-3">
-                    <a href="#projects" class="btn btn-danger px-4 py-2 rounded-pill fw-bold shadow-sm">Lihat Portofolio Karya</a>
-                    <a href="#contact" class="btn btn-outline-secondary px-4 py-2 rounded-pill fw-bold">Diskusi Proyek</a>
-                </div>
-            </div>
-            <div class="col-lg-5 text-center">
-                <img src="assets/profil.JPG" alt="Rospika Sarah" class="img-fluid rounded-4 shadow-sm border border-3 border-white" style="max-height: 320px; object-fit: cover;">
-            </div>
-        </section>
 
-        <!-- Bagian Project Showcase (Dynamic CSR dari projects.json) -->
-        <section id="projects" class="mb-5">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="fw-bold text-dark m-0">Project Showcase</h2>
-                <span class="text-muted small">Loaded via Dynamic CSR & JSON Data Layer</span>
-            </div>
-            
-            <!-- UI States: Loading & Error -->
-            <div id="loadingState" class="text-center py-5">
-                <div class="spinner-border text-danger" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-                <p class="text-secondary mt-2">Memuat data proyek dari server...</p>
-            </div>
-            <div id="errorState" class="alert alert-danger d-none" role="alert"></div>
+      <!-- ========================================================== -->
+      <!-- SECTION: HERO / TENTANG SAYA -->
+      <!-- ========================================================== -->
+      <section id="about" class="editorial-card hero-block mb-4">
+        <div class="hero-text-side">
+          <div class="role-badge">
+            <span class="badge-sparkle" aria-hidden="true"><i class="bi bi-stars"></i></span> Sistem Informasi &bull; Institut Teknologi Del
+          </div>
+          <h1 class="hero-headline">
+            Hi, I am <span class="shimmer-text">Rospika Sarah Yosefin Siregar</span> I'm undergraduate student of Information Systems at Institut Teknologi Del
+          </h1>
+          <p class="hero-pitch">
+            Mahasiswa Sistem Informasi di Institut Teknologi Del dengan fokus pada analisis kebutuhan bisnis digital, perancangan antarmuka prototipe teruji, dan rekayasa web terstruktur yang patuh pada standar aksesibilitas WCAG 2.2 Level AA.
+          </p>
 
-            <!-- Kontainer Kartu Proyek Dinamis -->
-            <div class="row" id="projectsContainer"></div>
-        </section>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary-action text-decoration-none">Lihat Portofolio Karya</a>
+            <a href="#services" class="btn-secondary-action text-decoration-none">Diskusi Proyek</a>
+          </div>
 
-        <!-- Bagian Formulir Kontak & Layanan (Decoupled Form REST Dispatch) -->
-        <section id="contact" class="bg-white p-4 p-lg-5 rounded-4 shadow-sm mb-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h3 class="fw-bold text-dark mb-3">Pesan Layanan Profesional</h3>
-                    <p class="text-secondary">Pilih paket layanan konsultasi atau pengembangan web yang sesuai dengan kebutuhan sistem Anda. Pesanan akan diproses secara asinkron tanpa memuat ulang halaman.</p>
-                </div>
-                <div class="col-lg-6">
-                    <form id="serviceOrderForm">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingName" name="clientName" placeholder="Nama Lengkap" required>
-                            <label for="floatingName">Nama Lengkap</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <select class="form-select" id="servicePackageSelect" name="selectedPackage" required>
-                                <option value="" selected disabled>Memuat paket layanan...</option>
-                            </select>
-                            <label for="servicePackageSelect">Pilih Paket Layanan</label>
-                        </div>
-                        <button type="submit" class="btn btn-danger w-100 fw-bold py-3 rounded-pill shadow-sm">Kirim Permintaan Layanan</button>
-                    </form>
-                </div>
+          <div class="methodology-card">
+            <h2 class="sub-heading-method">Alur Kerja Rekayasa & Inovasi (Ordered List):</h2>
+            <ol class="workflow-steps">
+              <li>Riset Lapangan & Pemodelan Proses Bisnis (Market Sizing & Alur BPMN)</li>
+              <li>Perancangan Antarmuka Interaktif & Arsitektur Pengguna di Figma</li>
+              <li>Implementasi Kode Semantik Bersih dan Pengujian Aksesibilitas Terstandar</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="hero-visual-side">
+          <div class="portrait-container floating-portrait">
+            <img src="assets/profil.JPG" alt="Foto Profil Rospika Sarah Yosefin Siregar" class="portrait-image">
+            <div class="status-floating-pill">
+              <span class="status-dot-pulse" aria-hidden="true"></span>
+              <span>Tersedia untuk Kolaborasi</span>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- SECTION: PORTOFOLIO KARYA (Dynamic CSR) -->
+      <!-- ========================================================== -->
+      <section id="projects" class="editorial-card interactive-hover mb-4">
+        <div class="section-intro">
+          <span class="section-kicker">Showcase Inovasi</span>
+          <h2 class="section-title">Portofolio Karya Unggulan</h2>
+          <p class="section-summary">Studi kasus riil yang memadukan model bisnis digital, kebutuhan masyarakat, dan solusi antarmuka interaktif.</p>
+        </div>
+
+        <!-- UI States -->
+        <div id="loadingState" class="text-center py-5">
+          <div class="spinner-border text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="text-secondary mt-2">Memuat data portofolio via Dynamic CSR...</p>
+        </div>
+        <div id="errorState" class="alert alert-danger d-none" role="alert"></div>
+
+        <!-- Grid 4 Kartu Portofolio (Dirender Asinkron via JS) -->
+        <div class="showcase-grid" id="projectsContainer"></div>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- SECTION: RIWAYAT AKADEMIK -->
+      <!-- ========================================================== -->
+      <section id="akademik" class="editorial-card interactive-hover mb-4">
+        <div class="section-intro">
+          <span class="section-kicker">Capaian Kurikulum</span>
+          <h2 class="section-title">Riwayat Akademik Terstruktur</h2>
+          <p class="section-summary">Rekapitulasi matakuliah inti Sistem Informasi yang ditempuh pada Semester Genap 2025/2026.</p>
+        </div>
+
+        <div class="table-card-wrapper">
+          <div class="table-scroll-layer">
+            <table class="academic-table">
+              <caption>Tabel 1.1: Rekapitulasi Capaian Matakuliah Inti Program Studi S1 Sistem Informasi</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-code">Kode MK</th>
+                  <th scope="col">Nama Mata Kuliah</th>
+                  <th scope="col" class="text-center">SKS</th>
+                  <th scope="col" class="text-center">Bidang Kajian</th>
+                  <th scope="col" class="text-center">Status Evaluasi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="code-badge">12S3101</th>
+                  <td>
+                    <div class="subject-title">Pemrograman dan Pengujian Aplikasi Web</div>
+                    <div class="subject-sub">HTML5 Semantic, Modern CSS, WCAG 2.2 Level AA</div>
+                  </td>
+                  <td class="text-center bold-sks">3</td>
+                  <td class="text-center"><span class="category-pill">Rekayasa Web</span></td>
+                  <td class="text-center"><span class="status-badge-progress">Sedang Ditempuh</span></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="code-badge">12S2103</th>
+                  <td>
+                    <div class="subject-title">Pemrograman Berorientasi Objek</div>
+                    <div class="subject-sub">Java OOP, Persistence Mapping, Software Architecture</div>
+                  </td>
+                  <td class="text-center bold-sks">3</td>
+                  <td class="text-center"><span class="category-pill">Software Eng.</span></td>
+                  <td class="text-center"><span class="status-badge-success">Lulus</span></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="code-badge">12S2205</th>
+                  <td>
+                    <div class="subject-title">Sistem Operasi</div>
+                    <div class="subject-sub">Process Concurrency, Memory Management, Linux CLI</div>
+                  </td>
+                  <td class="text-center bold-sks">3</td>
+                  <td class="text-center"><span class="category-pill">Infrastruktur</span></td>
+                  <td class="text-center"><span class="status-badge-success">Lulus</span></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="code-badge">12S3204</th>
+                  <td>
+                    <div class="subject-title">Manajemen Proyek Sistem Informasi</div>
+                    <div class="subject-sub">Scope, Work Breakdown Structure, Agile Methodologies</div>
+                  </td>
+                  <td class="text-center bold-sks">2</td>
+                  <td class="text-center"><span class="category-pill">Tata Kelola IT</span></td>
+                  <td class="text-center"><span class="status-badge-success">Lulus</span></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="code-badge">12S1102</th>
+                  <td>
+                    <div class="subject-title">Basis Data</div>
+                    <div class="subject-sub">Relational Schema, Normalization, SQL Query Optimization</div>
+                  </td>
+                  <td class="text-center bold-sks">3</td>
+                  <td class="text-center"><span class="category-pill">Data Eng.</span></td>
+                  <td class="text-center"><span class="status-badge-success">Lulus</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2" class="tfoot-label">Total Beban SKS Terdata</td>
+                  <td class="text-center tfoot-val">14 SKS</td>
+                  <td colspan="2" class="text-center tfoot-sub">Status Akademik: Sangat Baik (Aktif)</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- SECTION: FORMULIR LAYANAN (Decoupled Form REST Dispatch) -->
+      <!-- ========================================================== -->
+      <section id="services" class="editorial-card interactive-hover">
+        <div class="section-intro">
+          <span class="section-kicker">Ruang Diskusi Terbuka</span>
+          <h2 class="section-title">Formulir Pesan Layanan & Kolaborasi</h2>
+          <p class="section-summary">Ajukan kebutuhan perancangan produk digital, riset alur bisnis, atau konsultasi antarmuka web.</p>
+        </div>
+
+        <form class="consultation-form needs-validation" novalidate>
+          
+          <fieldset class="clean-fieldset">
+            <legend>01 / Identitas Koresponden</legend>
+
+            <div class="form-floating mb-3">
+              <input type="text" id="fullName" name="fullName" class="form-control" required placeholder="Nama Lengkap">
+              <label for="fullName">Nama Lengkap Anda <span class="required-indicator">*</span></label>
+              <div class="invalid-feedback">Mohon masukkan nama lengkap Anda.</div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="email" id="userEmail" name="userEmail" class="form-control" required placeholder="nama@del.ac.id">
+              <label for="userEmail">Email Resmi / Institusi <span class="required-indicator">*</span></label>
+              <div class="invalid-feedback">Mohon masukkan format email yang valid.</div>
+            </div>
+          </fieldset>
+
+          <fieldset class="clean-fieldset">
+            <legend>02 / Spesifikasi Kebutuhan Proyek</legend>
+
+            <div class="form-control-item mb-3">
+              <label for="serviceCategory" class="form-label fw-semibold fs-7">Peminatan Kolaborasi</label>
+              <select id="serviceCategory" name="serviceCategory" class="form-select" required>
+                <option value="" selected disabled>Memuat paket layanan...</option>
+              </select>
+            </div>
+
+            <div class="form-floating mb-3">
+              <textarea id="projectDetails" name="projectDetails" class="form-control" style="height: 110px" required placeholder="Deskripsi..."></textarea>
+              <label for="projectDetails">Deskripsi Singkat Rencana Proyek <span class="required-indicator">*</span></label>
+              <div class="invalid-feedback">Mohon tuliskan deskripsi singkat rencana proyek Anda.</div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="submit-button">Ajukan Formulir Kolaborasi</button>
+        </form>
+      </section>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="text-center py-4 text-secondary border-top">
-        <p class="mb-0">&copy; 2026 Rospika Sarah Yosefin Siregar - S1 Sistem Informasi IT Del. All rights reserved.</p>
-    </footer>
-
-    <!-- Universal Dynamic Modal -->
-    <div class="modal fade" id="universalProjectModal" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title fw-bold" id="projectModalTitle">Judul Proyek</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body p-4" id="projectModalBody"></div>
-            </div>
+    <!-- ========================================================== -->
+    <!-- SECTION: SIDEBAR / ASIDE -->
+    <!-- ========================================================== -->
+    <aside class="sidebar-column">
+      
+      <div class="aside-panel-card interactive-hover">
+        <h3 class="panel-heading">Kepemimpinan & Organisasi</h3>
+        <div class="org-item">
+          <div class="org-role">Anggota Departemen IPTEK</div>
+          <div class="org-name">Badan Eksekutif Mahasiswa (BEM) IT Del</div>
+          <p class="org-desc">
+            Menginisiasi program pembinaan wawasan sains, eksplorasi teknologi informasi terapan, serta mendorong literasi digital bagi sivitas akademika.
+          </p>
         </div>
-    </div>
+      </div>
 
-    <!-- Bootstrap Toast Notification -->
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header bg-success text-white">
-                <strong class="me-auto" id="toastTitle">Notifikasi</strong>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
-            </div>
-            <div class="toast-body" id="toastBody">Pesan berhasil dikirim.</div>
+      <div class="aside-panel-card interactive-hover">
+        <h3 class="panel-heading">Keahlian & Toolset (Unordered List)</h3>
+        <ul class="skills-pill-list">
+          <li>Business Process Modeling (BPMN)</li>
+          <li>ICT Pitch & Value Proposition</li>
+          <li>Figma UI/UX Prototyping</li>
+          <li>Arsitektur Semantik HTML5</li>
+          <li>CSS Box Model, Flexbox & Grid</li>
+          <li>WCAG 2.2 Level AA Standard</li>
+          <li>Version Control (Git & GitHub)</li>
+        </ul>
+      </div>
+
+      <div class="aside-panel-card highlight-panel">
+        <div class="badge-mini">Afiliasi Institusi</div>
+        <div class="inst-title">Institut Teknologi Del</div>
+        <p class="inst-sub">Fakultas Informatika & Teknik Elektro &bull; S1 Sistem Informasi</p>
+        <p class="inst-loc">Sitoluama, Laguboti, Toba, Sumatera Utara</p>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- SECTION: FOOTER -->
+  <!-- ========================================================== -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Rospika Sarah Yosefin Siregar. Pemrograman dan Pengujian Aplikasi Web — Institut Teknologi Del.</p>
+    </div>
+  </footer>
+
+  <!-- ========================================================== -->
+  <!-- UNIVERSAL DYNAMIC MODAL DIALOG -->
+  <!-- ========================================================== -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 18px;">
+        <div class="modal-header border-bottom-0 pb-0 pt-4 px-4">
+          <span class="badge bg-light text-secondary border px-3 py-1 rounded-pill" id="modalCategory">Kategori Proyek</span>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </div>
+        <div class="modal-body px-4 py-3">
+          <h3 class="modal-title fs-4 fw-bold text-dark mb-3" id="projectModalLabel">Judul Proyek</h3>
+          
+          <div class="mb-3 rounded-3 overflow-hidden border bg-light" style="max-height: 280px;">
+            <img id="modalImage" src="" alt="Ilustrasi Proyek" class="w-100 h-100 object-fit-cover" style="max-height: 280px;">
+          </div>
 
-    <!-- Bootstrap JS Bundle CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/api-service.js"></script>
-    <script src="js/app.js"></script>
+          <p class="text-secondary lh-base fs-6" id="modalDesc">Penjelasan detail mengenai proyek ini akan tampil secara dinamis.</p>
+          
+          <div class="alert alert-light border mt-3 small text-secondary">
+            <i class="bi bi-person-workspace text-danger me-2"></i><strong>Peran Pengembang:</strong> Bertanggung jawab penuh sebagai <em>Frontend & UI/UX Developer</em> dalam merancang dialog interaktif, integrasi visual modern, serta memastikan kenyamanan aksesibilitas pengguna.
+          </div>
+        </div>
+        <div class="modal-footer border-top-0 pb-4 px-4">
+          <button type="button" class="btn btn-secondary btn-sm px-4 rounded-pill" data-bs-dismiss="modal">Tutup Penjelasan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Toast Notification Container -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-success text-white">
+        <strong class="me-auto" id="toastTitle">Notifikasi</strong>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body" id="toastBody">Pesan berhasil dikirim.</div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <!-- Skrip Layanan API & Aplikasi Minggu 4 -->
+  <script src="js/api-service.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

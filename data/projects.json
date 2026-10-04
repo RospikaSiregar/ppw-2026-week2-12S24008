@@ -1,30 +1,42 @@
 [
   {
     "id": "project-1",
-    "title": "AndaliTrack",
-    "category": "Logistics System",
+    "title": "AndaliTrack Marketplace & Traceability",
+    "category": "Agrotech & Supply Chain (Digital Platform)",
     "thumbnail": "assets/andalitrack.png",
-    "description": "Sistem pelacakan dan manajemen logistik berbasis digital untuk memantau pengiriman barang secara real-time."
+    "badge": "Digital Supply Chain",
+    "domain": "Agrotech & Supply Chain",
+    "description": "AndaliTrack adalah platform rantai pasok digital inovatif yang dikembangkan untuk mengatasi permasalahan distribusi rempah andaliman di kawasan Danau Toba.",
+    "tech": ["ICT Business", "Pitch Deck", "Figma UI"]
   },
   {
     "id": "project-2",
-    "title": "KawanKia",
-    "category": "Health Tech",
+    "title": "KawanKia Mobile Application Prototype",
+    "category": "Healthcare & Public Service (UI/UX Research)",
     "thumbnail": "assets/kawankia.jpg",
-    "description": "Platform pendampingan kesehatan dan tumbuh kembang anak untuk membantu orang tua memantau gizi balita."
+    "badge": "Matakuliah UI/UX",
+    "domain": "Healthcare & Public Service",
+    "description": "KawanKia dirancang untuk membantu orang tua memantau grafik tumbuh kembang anak serta mengelola jadwal posyandu secara digital.",
+    "tech": ["UI/UX Research", "Prototype", "User Testing"]
   },
   {
     "id": "project-3",
-    "title": "TheKitCo.",
-    "category": "E-Commerce",
+    "title": "TheKitCo. Outdoor Rental Platform",
+    "category": "E-Commerce & Outdoor (Keteknowirausahaan)",
     "thumbnail": "assets/thekitco.png",
-    "description": "Layanan penyewaan perlengkapan petualangan dan outdoor secara digital dengan pemesanan terpadu."
+    "badge": "Keteknowirausahaan",
+    "domain": "E-Commerce & Outdoor",
+    "description": "TheKitCo adalah platform penyewaan alat outdoor terpadu yang memberikan kemudahan bagi pendaki dalam memesan perlengkapan berkualitas tinggi.",
+    "tech": ["Business Model", "Service Blueprint", "Web Prototype"]
   },
   {
     "id": "project-4",
     "title": "Pelajarin.ai Integration System",
     "category": "EduTech & AI Support",
     "thumbnail": "assets/pelajarin.jpg",
-    "description": "Platform penunjang pembelajaran akademik cerdas berbasis integrasi AI untuk membantu mahasiswa memahami materi."
+    "badge": "Academic Platform",
+    "domain": "EduTech & AI Support",
+    "description": "Platform pendukung pembelajaran interaktif berbasis jaringan kecerdasan buatan untuk membantu mahasiswa menguasai materi perkuliahan secara fleksibel.",
+    "tech": ["AI Support", "Learning", "Web App"]
   }
 ]

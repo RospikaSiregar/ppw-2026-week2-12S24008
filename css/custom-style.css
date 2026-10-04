@@ -45,3 +45,71 @@ body.main-layout {
 .card-content-body p {
     flex-grow: 1;
 }
+
+/* ==========================================================
+   PENYESUAIAN TAMBAHAN: DYNAMIC CSR & CONTAINER PROYEK
+   ========================================================== */
+
+/* Memastikan grid kartu portofolio rapi sejajar */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Memperbaiki tinggi dan tata letak kartu proyek dinamis */
+.project-showcase-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-delicate);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-warm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -4px rgba(189, 101, 124, 0.18);
+}
+
+/* Mengunci ukuran tinggi gambar kartu agar seragam */
+.card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: var(--card-subtle);
+  border-bottom: 1px solid var(--border-delicate);
+}
+
+.card-project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.project-showcase-card:hover .card-project-img {
+  transform: scale(1.05);
+}
+
+/* Memastikan isi teks dan tombol di dalam kartu fleksibel dan rapi ke bawah */
+.card-content-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-description {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1; /* Mendorong tombol ke posisi paling bawah secara sejajar */
+}
