@@ -35,7 +35,7 @@ Tabel berikut menjabarkan perbandingan teknis antara pendekatan monolitik statis
 | Parameter Evaluasi | Minggu 3 (Monolitik Statis) | Minggu 4 (Decoupled & Dynamic CSR) |
 | :--- | :--- | :--- |
 | **Sumber Data** | Ditulis secara statis dan manual (*hardcoded*) di dalam berkas `index.html` | Dipisahkan ke dalam direktori berkas data modular berbentuk JSON (`/data/`) |
-| **Paradigma Rendering** | Berbasis dokumen statis HTML bawaan yang dimuat langsung oleh server[cite: 2, 3] | Menggunakan *Client-Side Rendering* (CSR) asinkron via eksekusi skrip JavaScript dinamis |
+| **Paradigma Rendering** | Berbasis dokumen statis HTML bawaan yang dimuat langsung oleh server | Menggunakan *Client-Side Rendering* (CSR) asinkron via eksekusi skrip JavaScript dinamis |
 | **Manajemen Dialog Modal** | Memanfaatkan banyak elemen dialog modal statis yang terduplikasi untuk setiap item proyek | Menggunakan tepat satu komponen *Universal Dynamic Modal* berbasis pengenalan ID dan injeksi data asinkron |
 | **Pengiriman Formulir & State** | Menggunakan metode standar HTML yang memicu pemuatan ulang halaman penuh (*full page reload*) | Menggunakan pengiriman asinkron murni (AJAX/Fetch POST), umpan balik visual Toast, serta penyimpanan persisten `localStorage` |
 
