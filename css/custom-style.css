@@ -11,9 +11,27 @@
    SECTION 2: PALET WARNA 60-30-10 & VARIABEL GLOBAL (:root)
    ========================================================== */
 :root {
-    --primary-color: #d88395;
-    --bg-pastel: #fdf2f4;
-    --text-main: #4a4a4a;
+  /* 60% Dominan Netral (Soft Blush & Warm White Background) */
+  --bg-sand: #fdf8f9;
+  --bg-card: #ffffff;
+  
+  /* 30% Struktur & Tipografi (Plum Gelap & Border Lembut) */
+  --text-primary: #38252f;      
+  --text-secondary: #6e5461;    
+  --text-light: #a88e9c;        
+  --border-delicate: #f0e1e6;   
+  --card-subtle: #faf1f4;       
+  
+  /* 10% Aksen Aksi (Warm Dusty Rose / Mauve Pink) */
+  --accent-action: #bd657c;
+  --accent-action-hover: #a35066;
+  --accent-tint: #fbeaf0;
+  --accent-tag-border: #f4cfdc;
+  
+  /* Radius & Bayangan */
+  --radius-card: 18px;
+  --radius-input: 10px;
+  --shadow-warm: 0 4px 20px -2px rgba(56, 37, 47, 0.05), 0 2px 6px rgba(56, 37, 47, 0.03);
 }
 
 body {
