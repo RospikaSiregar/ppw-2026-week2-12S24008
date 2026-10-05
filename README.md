@@ -25,7 +25,7 @@ Sesuai dengan prinsip rekayasa perangkat lunak dan pemisahan minat (*Separation 
 
 Berikut adalah pemodelan arsitektur sistem menggunakan *C4 Container Diagram*[cite: 17]:
 
-```mermaid
+mermaid
 C4Container
     title C4 Container Diagram - Decoupled Web Portfolio & Service Portal
     
