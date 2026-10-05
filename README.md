@@ -25,7 +25,7 @@ Sesuai dengan prinsip rekayasa perangkat lunak dan pemisahan minat (*Separation 
 
 Berikut adalah pemodelan arsitektur sistem menggunakan *C4 Container Diagram*:
 
-mermaid
+
 
 C4Container
     title C4 Container Diagram - Decoupled Web Portfolio & Service Portal
@@ -49,4 +49,30 @@ C4Container
     Rel(client, cdn, "Mengunduh Asset & Shell", "HTTP/2")
     Rel(client, restApi, "Mengambil Data Modular", "Fetch API")
     Rel(restApi, jsonStore, "Membaca Berkas JSON", "I/O Asinkron")
+
+---
+
+## 3. Komparasi Komprehensif: Arsitektur Minggu 3 vs Minggu 4
+Tabel berikut menjabarkan perbandingan teknis antara pendekatan monolitik statis dengan pendekatan arsitektur dekuplet kontemporer:
+
+| Parameter Evaluasi | Minggu 3 (Monolitik Statis) | Minggu 4 (Decoupled & Dynamic CSR) |
+| :--- | :--- | :--- |
+| **Sumber Data** | Ditulis secara statis dan manual (*hardcoded*) di dalam berkas `index.html` | Dipisahkan ke dalam direktori berkas data modular berbentuk JSON (`/data/`) |
+| **Paradigma Rendering** | Berbasis dokumen statis HTML bawaan yang dimuat langsung oleh server | Menggunakan *Client-Side Rendering* (CSR) asinkron via eksekusi skrip JavaScript dinamis |
+| **Manajemen Dialog Modal** | Memanfaatkan banyak elemen dialog modal statis yang terduplikasi untuk setiap item proyek | Menggunakan tepat satu komponen *Universal Dynamic Modal* berbasis pengenalan ID dan injeksi data asinkron |
+| **Pengiriman Formulir & State** | Menggunakan metode standar HTML yang memicu pemuatan ulang halaman penuh (*full page reload*) | Menggunakan pengiriman asinkron murni (AJAX/Fetch POST), umpan balik visual Toast, serta penyimpanan persisten `localStorage` |
+
+---
+
+## 4. Analisis Kinerja Jaringan dan Caching (Browser DevTools / RFC 9111)
+Berdasarkan serangkaian pengujian, pemantauan, dan pengukuran melalui panel jaringan (*Network Tab*) pada Google Chrome DevTools, berikut adalah hasil analisis kinerja aplikasi:
+
+* **Time to First Byte (TTFB):** 
+  Menunjukkan nilai yang sangat cepat dan efisien (berkisar antara ~12 ms pada *Warm Load* hingga ~45 ms pada *Cold Load*) karena dokumen kerangka utama dilayani langsung dari penyimpanan lokal atau *edge server* peramban.
+* **Status HTTP Berkas JSON:** 
+  Permintaan asinkron terhadap berkas-berkas data (`projects.json` dan `service.json`) menghasilkan kode status `200 OK` pada muatan awal (*Cold Load*), dan berhasil memicu status `304 Not Modified` pada pemuatan berikutnya (*Warm Load*). Hal ini didukung oleh konfigurasi header penelusuran *Cache-Control* dan ETag yang menghemat penggunaan pita lebar (*bandwidth*) jaringan.
+* **Total Waktu Pemuatan dan Eksekusi:** 
+  Proses pemutakhiran antarmuka berjalan secara mulus tanpa menghalangi proses render utama peramban (*non-blocking rendering*), berkat pemanfaatan model pemrograman asinkron berbasis janji (*Promises*).
+
+---
 
