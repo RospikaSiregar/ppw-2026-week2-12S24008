@@ -18,14 +18,36 @@ Praktikum Mandiri Minggu 4 ini berfokus pada transisi dari pengembangan aplikasi
 ---
 
 ## 2. Pemodelan Arsitektur Sistem dan Prinsip Separation of Concerns (SoC)
-Penerapan *Separation of Concerns* (SoC) dalam proyek ini membagi tanggung jawab fungsional sistem ke dalam tiga lapisan terpisah secara mandiri:
+Sesuai dengan prinsip rekayasa perangkat lunak dan pemisahan minat (*Separation of Concerns* / SoC), arsitektur sistem dibagi ke dalam tiga lapisan mandiri:
+1. **Presentation Tier (Client Tier):** Bertanggung jawab atas render antarmuka pengguna berbasis dokumen HTML semantik (`index.html`)[cite: 14], penataan gaya visual menggunakan Bootstrap 5.3 serta lembar gaya kustom (`custom-style.css`), dan pengelolaan logika kontrol DOM interaktif via `app.js`.
+2. **Static Server & CDN Tier:** Berfungsi untuk melayani kerangka shell aplikasi dasar, skrip pengendali, dan aset gambar secara global dengan latensi rendah.
+3. **Data Storage & Mock REST API Tier:** Lapisan penyimpan data modular yang terdiri dari berkas `projects.json`, `services.json`, dan `profile.json` yang diakses secara asinkron menggunakan modul layanan `api-service.js`.
 
-* **Presentation Tier (Lapisan Presentasi / Client):** 
-  Berada pada peramban web pengguna dan dibangun menggunakan kerangka HTML5 semantik, penataan gaya visual Bootstrap 5.3, serta lembar gaya kustom (`style.css`). Lapisan ini bertanggung jawab penuh untuk menampilkan kerangka antarmuka, menangani interaksi pengguna, serta merender elemen DOM secara dinamis.
-* **Application / Service Logic Tier (Lapisan Logika Layanan):** 
-  Diimplementasikan melalui modul kelas `ApiService` dan `PortfolioApp` pada berkas JavaScript (`api-service.js` dan `app.js`). Lapisan ini mengatur mekanisme permintaan data asinkron menggunakan fungsi `fetch()` dan penanganan janji berbasis `async/await`, mengelola status antarmuka (*UI States*), serta menangani validasi formulir kolaborasi.
-* **Data Storage & Service Tier (Lapisan Penyimpanan Data):** 
-  Berfungsi sebagai simulasi lapisan *mock RESTful API* lokal yang menyimpan seluruh informasi terstruktur di dalam direktori `/data/`. Berkas-berkas tersebut meliputi `projects.json` (katalog portofolio karya), `service.json` (pilihan paket layanan kolaborasi), dan `profile.json` (biodata dan afiliasi pengembang).
+Berikut adalah pemodelan arsitektur sistem menggunakan *C4 Container Diagram*[cite: 17]:
+
+```mermaid
+C4Container
+    title C4 Container Diagram - Decoupled Web Portfolio & Service Portal
+    
+    Person(user, "Pengguna / Visitor", "Mengakses portofolio via browser")
+    
+    System_Boundary(c1, "Presentation & Client Tier") {
+        Container(client, "Browser Client", "HTML5, Bootstrap 5.3, JS", "Merender DOM secara dinamis (CSR) dan antarmuka pengguna")
+    }
+    
+    System_Boundary(c2, "Static Server & CDN Tier") {
+        Container(cdn, "CDN / Static Server", "GitHub Pages / Netlify", "Menyampaikan kerangka statis HTML, CSS, dan asset secara global")
+    }
+    
+    System_Boundary(c3, "Data Storage & Mock API Tier") {
+        Container(jsonStore, "JSON Data Providers", "projects.json, services.json, profile.json", "Menyimpan data terstruktur sebagai mock REST API")
+        Container(restApi, "Mock REST API Dispatch", "Async Fetch API", "Menangani pengambilan data asinkron via async/await")
+    }
+
+    Rel(user, client, "Meminta Halaman Web", "HTTPS")
+    Rel(client, cdn, "Mengunduh Asset & Shell", "HTTP/2")
+    Rel(client, restApi, "Mengambil Data Modular", "Fetch API")
+    Rel(restApi, jsonStore, "Membaca Berkas JSON", "I/O Asinkron")
 
 ---
 
