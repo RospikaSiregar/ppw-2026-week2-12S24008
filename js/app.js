@@ -46,7 +46,7 @@ class PortfolioApp {
         } else if (status === 'error') {
             errorEl.classList.remove('d-none');
             containerEl.classList.add('d-none');
-            errorEl.textContent = `Gagal memuat data proyek: ${this.state.error}`;
+            errorEl.textContent = `Gagal memuat data portofolio: ${this.state.error}`;
         }
     }
 
@@ -54,25 +54,29 @@ class PortfolioApp {
         const container = document.getElementById('projectsContainer');
         if (!container) return;
 
+        // Menggunakan struktur grid Bootstrap (row, col-md-4, mb-4) seperti standar modul
+        container.className = "row";
         container.innerHTML = projects.map(proj => `
-            <article class="project-showcase-card">
-                <div class="card-image-wrap">
-                    <img src="${proj.thumbnail}" alt="Preview ${proj.title}" class="card-project-img">
-                    <span class="card-badge-overlay">${proj.badge}</span>
-                </div>
-                <div class="card-content-body">
-                    <span class="domain-tag">${proj.domain}</span>
-                    <h3 class="card-heading-title">${proj.title}</h3>
-                    <p class="card-description">${proj.description}</p>
-                    <div class="tech-stack-row mb-3">
-                        ${proj.tech.map(t => `<span>${t}</span>`).join('')}
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                <article class="project-showcase-card w-100">
+                    <div class="card-image-wrap">
+                        <img src="${proj.thumbnail}" alt="Preview ${proj.title}" class="card-project-img">
+                        <span class="card-badge-overlay">${proj.badge}</span>
                     </div>
-                    <button type="button" class="btn btn-outline-danger btn-sm rounded-pill w-100 fw-bold mt-auto" 
-                            onclick="app.openUniversalModal('${proj.id}')">
-                        <i class="bi bi-eye-fill me-1"></i> Lihat Penjelasan & Detail Proyek
-                    </button>
-                </div>
-            </article>
+                    <div class="card-content-body">
+                        <span class="domain-tag">${proj.domain}</span>
+                        <h3 class="card-heading-title">${proj.title}</h3>
+                        <p class="card-description">${proj.description}</p>
+                        <div class="tech-stack-row mb-3">
+                            ${proj.tech.map(t => `<span>${t}</span>`).join('')}
+                        </div>
+                        <button type="button" class="btn btn-outline-danger btn-sm rounded-pill w-100 fw-bold mt-auto" 
+                                onclick="app.openUniversalModal('${proj.id}')">
+                            <i class="bi bi-eye-fill me-1"></i> Lihat Penjelasan & Detail Proyek
+                        </button>
+                    </div>
+                </article>
+            </div>
         `).join('');
     }
 
@@ -123,7 +127,7 @@ class PortfolioApp {
             try {
                 await ApiService.submitServiceOrder(payload);
                 this.saveOrderToLocalStorage(payload);
-                this.showToastNotification('Sukses!', 'Formulir kolaborasi berhasil dikirim melalui API.');
+                this.showToastNotification('Sukses!', 'Formulir kolaborasi berhasil dikirim.');
                 form.reset();
                 form.classList.remove('was-validated');
             } catch (err) {
@@ -143,10 +147,7 @@ class PortfolioApp {
 
     showToastNotification(title, message) {
         const toastEl = document.getElementById('liveToast');
-        if (!toastEl) {
-            alert(`${title}: ${message}`);
-            return;
-        }
+        if (!toastEl) return;
         document.getElementById('toastTitle').textContent = title;
         document.getElementById('toastBody').textContent = message;
         const toast = new bootstrap.Toast(toastEl);
